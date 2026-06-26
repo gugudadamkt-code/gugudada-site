@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     LANDING PAGE — GUGÛ DADÁ (eBook de Introdução Alimentar)
+     ------------------------------------------------------------
+     RESPONSIVIDADE 100%: Corrigida (grids, menu, hero, tamanhos, overflow).
+     Partículas habilitadas no mobile (sutis). Contidas no .hero + z-order + clean start via JS.
+     Menu fecha automaticamente. Barra sticky de compra no mobile adicionada.
+
+     AÇÕES OBRIGATÓRIAS ANTES DE PUBLICAR:
+     1. Substitua TODOS href="#" pelo link real do checkout (Hotmart/Kiwify/etc)
+     2. Troque TODAS as imagens placehold.co por fotos reais do produto
+     3. Atualize https://www.seudominio.com.br/ + og:image completo
+     4. Teste responsividade em DevTools (iPhone, Android, iPad)
+     ============================================================ -->
+
+<title>Gugû Dadá | eBook Completo de Introdução Alimentar para Bebês de 6 a 24 meses</title>
+<meta name="description" content="Mais de 100 receitas práticas, cardápios semanais e orientações para cada fase do seu bebê. Guia completo de introdução alimentar, do 6º mês aos 24 meses. Acesso imediato em PDF.">
+<meta name="keywords" content="introdução alimentar, papinha de bebê, receitas para bebê, cardápio infantil, alimentação complementar, ebook bebê">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.seudominio.com.br/">
+
+<!-- Open Graph / Compartilhamento em redes sociais -->
+<meta property="og:type" content="product">
+<meta property="og:title" content="Gugû Dadá | Guia Completo de Introdução Alimentar">
+<meta property="og:description" content="Mais de 100 receitas práticas, cardápios semanais e orientações para cada fase do seu bebê.">
+<meta property="og:image" content="img/Logo.png">
+<meta property="og:locale" content="pt_BR">
+
+<!-- ============================================================
+  GOOGLE ANALYTICS 4 + META PIXEL (para Kiwify + Meta Ads)
+  ============================================================
+  Scripts posicionados o mais alto possível no <head> (logo após metas) para 
+  tracking e eventos precoces. 
+  1. Substitua G-XXXXXXXXXX pelo seu Measurement ID do GA4.
+  2. Substitua XXXXXXXXXXXXXXX pelo seu Meta Pixel ID (Events Manager).
+  3. Kiwify: No painel > Checkout > Integrações adicione o Pixel Meta; 
+     use o link de checkout Kiwify nos hrefs dos botões.
+     Purchase pode vir automático ou manual na página de obrigado.
+  4. Meta Ads: ViewContent + view_item usados aqui para otimização de conversão.
+============================================================ -->
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');   // Troque pelo seu ID GA4
+
+  // Evento recomendado para landing de produto (ajuda em relatórios e remarketing)
+  gtag('event', 'view_item', {
+    currency: 'BRL',
+    value: 17.90,
+    items: [{
+      item_id: 'gugu-dada-ebook',
+      item_name: 'Gugû Dadá - Guia Completo de Introdução Alimentar',
+      item_category: 'eBooks / Introdução Alimentar',
+      price: 17.90
+    }]
+  });
+</script>
+
+<!-- Meta Pixel (Facebook) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'XXXXXXXXXXXXXXX');   // Troque pelo seu Pixel ID do Meta
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Gugû Dadá | Guia Completo de Introdução Alimentar',
+  content_type: 'product',
+  content_ids: ['ebook-introducao-alimentar'],
+  value: 17.90,
+  currency: 'BRL'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- Favicon simples (coraçãozinho), pode ser substituído por um arquivo .ico/.png -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23EE7A52'/%3E%3Cpath d='M50 75 C20 55 25 30 45 32 C50 33 50 38 50 38 C50 38 50 33 55 32 C75 30 80 55 50 75Z' fill='%23FBF6EC'/%3E%3C/svg%3E">
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Dados estruturados (SEO básico — rich results de produto) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Gugû Dadá — Guia Completo de Introdução Alimentar",
+  "description": "eBook digital com mais de 100 receitas, cardápios semanais e orientações para introdução alimentar de bebês de 6 a 24 meses.",
+  "image": "img/capa.png",
+  "brand": { "@type": "Brand", "name": "Gugû Dadá" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "price": "17.90",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.seudominio.com.br/"
+  }
+}
+</script>
+
+<style>
+/* =================== PARTICLES (contained in .hero, low z, clean load) =================== */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0; /* hide until ready to prevent flash/stuck on reload */
+  transition: opacity 120ms ease;
+  --p-opacity: 0.22;
+  --travel: 420px;
+}
+
+.particles.ready {
+  opacity: 1;
+}
+
+/* PARTICULAS */
+.particles span {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0;
+  animation: float 8s infinite linear;
+}
+
+/* POSIÇÕES ALEATÓRIAS (unchanged) */
+.particles span:nth-child(1){ left:10%; animation-delay:0s; }
+.particles span:nth-child(2){ left:25%; animation-delay:2s; }
+.particles span:nth-child(3){ left:40%; animation-delay:4s; }
+.particles span:nth-child(4){ left:60%; animation-delay:1s; }
+.particles span:nth-child(5){ left:75%; animation-delay:3s; }
+.particles span:nth-child(6){ left:90%; animation-delay:5s; }
+
+/* ANIMAÇÃO (uses CSS vars for responsive travel/opacity) */
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: var(--p-opacity); }
+  100% { transform: translateY(var(--travel)); opacity: 0; }
+}
+  /* =================== TOKENS =================== */
+  :root{
+    --cream:        #FBF6EC;
+    --cream-soft:   #F6EFE0;
+    --green-deep:   #2F4A32;
+    --green:        #6E9A6B;
+    --green-soft:   #DCE8D6;
+    --peach:        #EE7A52;
+    --peach-dark:   #DE6A42;
+    --peach-soft:   #FBDCC9;
+    --yellow:       #F2C14E;
+    --lavender:     #C7B6D9;
+    --text:         #4A4438;
+    --text-light:   #8A8273;
+    --white:        #FFFFFF;
+
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --shadow-soft: 0 18px 40px rgba(47,74,50,0.09);
+    --shadow-card: 0 10px 26px rgba(47,74,50,0.07);
+    --container: 1180px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Quicksand', sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ text-decoration:none; color:inherit; }
+  ul{ list-style:none; }
+  h1,h2,h3,h4{
+    font-family:'Fredoka', sans-serif;
+    color:var(--green-deep);
+    font-weight:600;
+    line-height:1.2;
+  }
+  .container{
+    width:100%;
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{ padding:84px 0; }
+  :focus-visible{ outline:3px solid var(--peach); outline-offset:3px; border-radius:6px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* =================== SIGNATURE: trio de bolinhas (bowls) =================== */
+  .bowl-dots{ display:inline-flex; align-items:center; gap:5px; vertical-align:middle; }
+  .bowl-dots span{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .bowl-dots span:nth-child(1){ background:var(--green); }
+  .bowl-dots span:nth-child(2){ background:var(--yellow); }
+  .bowl-dots span:nth-child(3){ background:var(--lavender); }
+
+  /* =================== BOTÕES =================== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:.3px;
+    padding:17px 34px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--peach), var(--peach-dark));
+    color:var(--white);
+    box-shadow:0 14px 28px rgba(222,106,66,0.35);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px rgba(222,106,66,0.42); }
+  .btn-ghost{
+    background:var(--white);
+    color:var(--green-deep);
+    border:2px solid var(--green-soft);
+  }
+  .btn-ghost:hover{ border-color:var(--green); }
+  .btn-block{ width:100%; }
+  .secure-note{
+    margin-top:12px;
+    font-size:13.5px;
+    color:var(--text-light);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  /* =================== HEADER =================== */
+  .site-header{
+    position:sticky; top:0; z-index:220; /* alto para ficar acima de partículas e conteúdo */
+    background: #FFFBF5; /* subtle delicate off-white to differentiate from hero cream */
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(47,74,50,0.06);
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+  }
+  .logo-img {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: height .2s ease;
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 20px;
+    min-height: 64px;
+  }
+  /* Logo now uses image only - legacy text styles removed */
+  .main-nav ul{ display:flex; gap:28px; }
+  .main-nav a{
+    font-weight:600;
+    font-size:15px;
+    color:var(--green-deep);
+    transition:color .15s ease;
+    padding: 4px 2px;
+  }
+  .main-nav a:hover{ color:var(--peach); }
+  .header-cta{ display:flex; align-items:center; gap:16px; }
+  .header-cta .btn{ padding:12px 24px; font-size:14.5px; }
+
+  .menu-toggle-input{ display:none; }
+  .menu-toggle-label{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+    color:var(--green-deep);
+    line-height:1;
+    padding:4px 6px;
+  }
+
+  /* Mobile-only CTA inside nav (shown only <=760px) */
+  .mobile-nav-cta { display: none; }
+
+  /* =================== HERO =================== */
+  .hero{ 
+    padding-top:30px; 
+    padding-bottom:60px; 
+    position: relative; /* contains particles absolutely */
+  }
+  .hero .container{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap: 32px 56px; /* vertical gap reduced for left column stack (intro above actions); horizontal for visual */
+    align-items:start;
+    position: relative;
+    z-index: 2; /* hero content above particles (z:1) */
+  }
+  /* Desktop left column stacking: intro + actions under lead; visual spans beside */
+  .hero-intro { grid-column: 1; grid-row: 1; }
+  .hero-actions { grid-column: 1; grid-row: 2; }
+  .hero-visual { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .hero img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--peach-soft);
+    color:var(--peach-dark);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:46px;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{ color:var(--peach); }
+  .hero p.lead{
+    font-size:17px;
+    color:var(--text);
+    max-width:480px;
+    margin-bottom:30px;
+  }
+  .mini-features{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+    margin-bottom:34px;
+  }
+  .mini-feature{ display:flex; flex-direction:column; gap:10px; }
+  .mini-feature .icon-circle{
+    width:46px; height:46px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--green-soft);
+  }
+  .mini-feature .icon-circle svg{ width:22px; height:22px; }
+  .mini-feature p{ font-size:13.5px; font-weight:600; color:var(--green-deep); line-height:1.35; }
+
+  .hero-visual{ position:relative; display:flex; justify-content:center; align-items:center; }
+  .hero-visual .blob{
+    position:absolute;
+    width:430px; height:430px;
+    background:radial-gradient(circle at 30% 30%, var(--green-soft), transparent 70%);
+    border-radius:50%;
+    z-index:0;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .hero-visual .cover-frame{
+    position:relative; z-index:1;
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-soft);
+    overflow:hidden;
+    width: 85%;
+    max-width: 380px;
+    border:6px solid var(--white);
+    padding: 6px; /* more breathing room for bigger cover */
+  }
+  .hero-visual .cover-frame img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .badge-float{
+    position:absolute; z-index:2;
+    top:6%; right:2%;
+    width:118px; height:118px;
+    border-radius:50%;
+    background:var(--green-deep);
+    color:var(--cream);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    font-family:'Fredoka', sans-serif;
+    box-shadow:var(--shadow-soft);
+  }
+  .badge-float strong{ font-size:24px; font-weight:700; }
+  .badge-float span{ font-size:12px; font-weight:500; }
+
+  /* =================== FEATURES STRIP =================== */
+  .section-head{ text-align:center; margin-bottom:52px; }
+  .section-head .bowl-dots{ margin-bottom:14px; justify-content:center; display:flex; }
+  .section-head h2{ font-size:32px; }
+
+  .features-strip{ background:var(--cream-soft); }
+  .features-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:22px;
+  }
+  .feature-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:var(--shadow-card);
+    transition:transform .2s ease;
+  }
+  .feature-card:hover{ transform:translateY(-4px); }
+  .feature-card .icon-circle{
+    width:58px; height:58px;
+    border-radius:50%;
+    margin:0 auto 18px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .feature-card .icon-circle svg{ width:26px; height:26px; }
+  .feature-card p{ font-size:14.5px; font-weight:600; color:var(--green-deep); line-height:1.4; }
+
+  .bg-green{ background:var(--green-soft); }
+  .bg-peach{ background:var(--peach-soft); }
+  .bg-yellow{ background:#FBEAC4; }
+  .bg-lavender{ background:#EDE5F4; }
+  .bg-blue{ background:#DCEAEA; }
+  .icon-circle svg{ stroke:var(--green-deep); }
+
+  /* =================== SHOWCASE (checklist + galeria + preço) =================== */
+  .showcase-grid{
+    display:grid;
+    grid-template-columns:1fr 0.85fr 1fr;
+    gap:26px;
+    align-items:stretch;
+  }
+  .checklist-card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    padding:42px 36px;
+    box-shadow:var(--shadow-card);
+  }
+  .checklist-card h2{ font-size:27px; margin-bottom:24px; }
+  .checklist-card ul{ display:flex; flex-direction:column; gap:14px; }
+  .checklist-card li{
+    display:flex; align-items:flex-start; gap:12px;
+    font-size:15px; font-weight:600; color:var(--text);
+  }
+  .checklist-card li svg{ flex-shrink:0; margin-top:2px; width:19px; height:19px; }
+
+  .gallery-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .gallery-grid img{
+    width: 100%;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+    display: block;
+  }
+
+  .price-card{
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:var(--radius-lg);
+    padding:42px 36px;
+    box-shadow:var(--shadow-soft);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .price-card h3{
+    color:var(--white);
+    font-size:23px;
+    margin-bottom:18px;
+  }
+  .price-old{
+    font-size:16px;
+    text-decoration:line-through;
+    opacity:.65;
+    margin-bottom:2px;
+  }
+  .price-label{ font-size:14px; opacity:.85; margin-bottom:4px; }
+  .price-now{
+    font-family:'Fredoka', sans-serif;
+    font-size:50px;
+    font-weight:700;
+    color:var(--yellow);
+    margin-bottom:24px;
+    line-height:1;
+  }
+  .price-now sup{ font-size:24px; top:-1.1em; }
+  .price-card .btn{ width:100%; margin-bottom:6px; }
+  .price-card .secure-note{ color:rgba(251,246,236,0.75); }
+
+  .payment-box {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    box-shadow: var(--shadow-card);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* =================== TESTIMONIALS =================== */
+  .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .testimonial-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:30px 28px;
+    box-shadow:var(--shadow-card);
+  }
+  .stars{ display:flex; gap:3px; margin-bottom:14px; }
+  .stars svg{ width:17px; height:17px; fill:var(--yellow); }
+  .testimonial-card p.quote{ font-size:15px; color:var(--text); margin-bottom:20px; }
+  .testimonial-author{ display:flex; align-items:center; gap:12px; }
+  .testimonial-author img{
+    width:46px; height:46px; border-radius:50%; object-fit:cover;
+  }
+  .testimonial-author strong{ font-size:14.5px; color:var(--green-deep); }
+
+  /* =================== GARANTIA =================== */
+  .guarantee-banner{
+    background:var(--green-soft);
+    border-radius:var(--radius-lg);
+    padding:38px 44px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+  }
+  .guarantee-left{ display:flex; align-items:center; gap:22px; }
+  .guarantee-left .shield-icon{
+    width:62px; height:62px;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .guarantee-left h3{ font-size:19px; margin-bottom:6px; }
+  .guarantee-left p{ font-size:14.5px; color:var(--text); max-width:480px; }
+  .guarantee-seal{
+    width:96px; height:96px;
+    border-radius:50%;
+    background:var(--yellow);
+    border:4px dashed var(--white);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    flex-shrink:0;
+    font-family:'Fredoka', sans-serif;
+    color:var(--green-deep);
+  }
+  .guarantee-seal strong{ font-size:21px; line-height:1; font-weight:700; }
+  .guarantee-seal span{ font-size:9px; letter-spacing:.4px; }
+
+  /* =================== FAQ + CTA FINAL =================== */
+  .faq-final-grid{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:40px;
+    align-items:start;
+  }
+  .faq-final-grid h2{ font-size:30px; margin-bottom:26px; }
+  .faq-item{
+    background:var(--white);
+    border-radius:var(--radius-sm);
+    margin-bottom:12px;
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+  }
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:19px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:600;
+    color:var(--green-deep);
+    font-size:15.5px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary .chev{ transition:transform .2s ease; flex-shrink:0; margin-left:14px; }
+  .faq-item[open] summary .chev{ transform:rotate(180deg); }
+  .faq-item .faq-answer{
+    padding:0 24px 20px;
+    font-size:14.5px;
+    color:var(--text-light);
+  }
+
+  .contact-side {
+    background: #f8f5f0;
+    border: 1px solid #e8e0d5;
+    border-radius: 18px;
+    padding: 24px 22px;
+    box-shadow: var(--shadow-card);
+  }
+  .side-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+  }
+  .contact-form .form-group {
+    margin-bottom: 14px;
+  }
+  .contact-form label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #5f5a53;
+    margin-bottom: 4px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d8d0c4;
+    border-radius: 12px;
+    font-size: 14.5px;
+    font-family: inherit;
+    background: #fff;
+    color: var(--text);
+    transition: border-color .2s ease;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(110, 154, 107, 0.1);
+  }
+  .contact-form textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+  .btn-send {
+    width: 100%;
+    background: linear-gradient(135deg, var(--peach), var(--peach-dark));
+    color: var(--white);
+    border: none;
+    padding: 13px 18px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 600;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-send:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(222, 106, 66, 0.35);
+  }
+  .form-note {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* =================== FOOTER =================== */
+  footer{
+    background:var(--green-deep);
+    color:rgba(251,246,236,0.85);
+    padding:46px 0 28px;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:18px;
+    border-top:1px solid rgba(251,246,236,0.12);
+    padding-top:24px;
+    margin-top:30px;
+  }
+  footer .logo-text{ color:var(--cream); font-size:22px; }
+  footer .logo-text span{ color:var(--yellow); }
+  footer .logo-tagline{ color:rgba(251,246,236,0.6); }
+  .footer-links{ display:flex; gap:24px; font-size:13.5px; }
+  .footer-links a:hover{ color:var(--yellow); }
+  .footer-copy{ font-size:13px; color:rgba(251,246,236,0.55); }
+
+  /* =================== RESPONSIVO - MELHORADO PARA MOBILE 100% =================== */
+  /* Tablet / large mobile */
+  @media (max-width: 980px) {
+    .mini-features { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .features-grid { grid-template-columns: repeat(3, 1fr); }
+    .showcase-grid { grid-template-columns: 1fr; gap: 22px; }
+    .gallery-grid { max-width: 380px; margin: 0 auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .faq-final-grid { grid-template-columns: 1fr; gap: 28px; }
+    .hero-visual .cover-frame { width: 82%; max-width: 300px; }
+    .hero-visual .blob { width: 300px; height: 300px; }
+  }
+
+  /* Mobile principal (landscape + portrait) */
+  @media (max-width: 760px) {
+    .site-header { background: rgba(251,246,236,0.98); }
+    .logo-img { height: 52px; }
+
+    /* Ensure header flex places hamburger label on far right (after hiding .header-cta) */
+    .header-inner {
+      padding: 8px 16px;
+      align-items: center;
+    }
+    
+    /* HAMBURGER MENU - ROBUST JS + 'open' class (checkbox fallback removed to fix selector issues).
+       Uses .main-nav.open for reliable show/hide. aria + toggle via JS. */
+    .main-nav {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      max-height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      transition: max-height .28s ease;
+      z-index: 250;
+    }
+    .main-nav.open {
+      background: var(--cream);
+      padding: 8px 20px 18px;
+      box-shadow: var(--shadow-soft);
+      border-bottom: 1px solid rgba(47,74,50,0.08);
+      visibility: visible;
+      max-height: 360px;
+      z-index: 350;
+    }
+    .main-nav ul {
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 0;
+    }
+    .main-nav a {
+      display: block;
+      padding: 12px 10px;
+      font-size: 15.5px;
+      border-radius: 8px;
+    }
+    .main-nav a:hover { background: var(--green-soft); color: var(--green-deep); }
+
+
+
+    /* Label always display:block on mobile; with header-cta:none, flex justify space-between puts hamburger reliably on right */
+    .menu-toggle-label {
+      display: block;
+      font-size: 28px;
+      padding: 2px 8px;
+      cursor: pointer;
+      margin-left: auto; /* push to right in flex row */
+    }
+    
+    /* Remove .header-cta button from header on mobile only (desktop keeps it) */
+    .header-cta {
+      display: none !important;
+    }
+
+    /* Mobile CTA button: inserted as LAST <li> in .main-nav ul; full-width enhanced .btn.btn-primary */
+    .mobile-nav-cta {
+      display: list-item;
+      margin-top: 10px;
+    }
+    .main-nav .mobile-nav-cta a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 15.5px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(222,106,66,0.35);
+    }
+    .main-nav .mobile-nav-cta a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(222,106,66,0.42);
+    }
+    
+    section { padding: 52px 0; }
+    .hero { padding-top: 18px; padding-bottom: 42px; }
+
+    /* MOBILE HERO: eyebrow + h1 + lead -> cover -> CTA. Flex column, centered. */
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-intro,
+    .hero-actions {
+      width: 100%;
+      text-align: center;
+    }
+    .hero-intro .eyebrow {
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+    .hero-intro h1,
+    .hero-intro p.lead {
+      text-align: center;
+    }
+    .hero h1 { font-size: 29px; line-height: 1.15; margin-bottom: 16px; }
+    .hero p.lead { font-size: 15.5px; max-width: 100%; margin-bottom: 22px; }
+    .eyebrow { font-size: 11.5px; padding: 7px 14px; margin-bottom: 16px; }
+    
+
+    .mini-feature .icon-circle { width: 38px; height: 38px; }
+    .mini-feature .icon-circle svg { width: 18px; height: 18px; }
+    .mini-feature p { font-size: 12.5px; }
+    
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .feature-card { padding: 22px 16px; }
+    
+    .guarantee-banner { flex-direction: column; text-align: center; padding: 28px 22px; gap: 18px; }
+    .guarantee-left { flex-direction: column; text-align: center; }
+    .guarantee-seal { width: 78px; height: 78px; }
+    
+    .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+    .price-now { font-size: 44px; }
+    .price-card { padding: 32px 26px; }
+  }
+
+  /* Small mobile (iPhone etc) */
+  @media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .hero h1 { font-size: 26px; }
+
+    .features-grid { grid-template-columns: 1fr; }
+    .gallery-grid { max-width: 100%; }
+    .price-now { font-size: 38px; }
+    .checklist-card, .price-card { padding: 28px 22px; }
+    .hero-visual .cover-frame { width: 76%; max-width: 280px; border-width: 4px; padding: 4px; margin: 4px auto; }
+    .hero-visual .cover-frame img { max-height: 340px; }
+    .hero-visual .blob { display: none; }
+    .eyebrow { font-size: 10.5px; padding: 6px 12px; letter-spacing: .2px; }
+  }
+
+  /* Very small screens */
+  @media (max-width: 360px) {
+    .hero h1 { font-size: 23px; }
+    .btn { padding: 14px 22px; font-size: 14.5px; }
+  }
+
+  /* Sticky CTA bar para MOBILE (conversão alta) */
+  .mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--peach), var(--peach-dark));
+    color: white;
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    z-index: 999;
+    text-align: center;
+  }
+  .mobile-sticky-cta a {
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    padding: 2px;
+  }
+  @media (max-width: 760px) {
+    .mobile-sticky-cta { display: block; }
+    /* dá espaço no final da página para a barra não cobrir conteúdo */
+    footer { padding-bottom: 72px; }
+  }
+  
+  /* =================== PARTICLES MOBILE: enabled, subtle (smaller, lower opacity, shorter) =================== */
+  @media (max-width: 760px) {
+    .particles {
+      height: 210px;
+      --travel: 210px;
+      --p-opacity: 0.10; /* lower/subtle opacity */
+    }
+    .particles span {
+      font-size: 11px; /* smaller size */
+    }
+  }
+</style>
+</head>
+
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a href="#topo" class="logo">
+      <img src="img/Logo.png" alt="Gugû Dadá" class="logo-img">
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle-label" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="main-nav">☰</label>
+
+    <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#conteudo">Sobre o eBook</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#fale-conosco">Fale Conosco!</a></li>
+        <li class="mobile-nav-cta"><a href="#" class="btn btn-primary">Quero meu eBook</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <!-- LINK A SUBSTITUIR: troque "#" pelo link real do seu checkout (Hotmart, Kiwify, Eduzz etc.) -->
+      <a href="#" class="btn btn-primary"><span class="btn-text">Quero meu eBook</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- Particles container moved inside .hero for proper containment (no longer top:80px absolute to body).
+         Now z:1, hero .container z:2 ensures content above. Header (z:210) and mobile nav (z:320) always above. -->
+    <div class="particles">
+      <span>🍼</span>
+      <span>✨</span>
+      <span>🧸</span>
+      <span>💛</span>
+      <span>🌸</span>
+      <span>🍼</span>
+    </div>
+    <div class="container">
+      <!-- Hero content: eyebrow + h1 + lead (hero-intro), cover (hero-visual), CTA (hero-actions).
+           Desktop grid; mobile stacked & centered. -->
+      <div class="hero-intro">
+        <span class="eyebrow">❤️ GUIA PRÁTICO PARA PAIS E MÃES</span>
+        <h1>Receitas, cardápios e orientações para <span class="accent">cada fase do seu bebê</span></h1>
+        <p class="lead">100 receitas práticas, cardápios semanais, dicas e muito mais para tornar a alimentação do seu bebê saudável, segura e cheia de amor.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="blob" aria-hidden="true"></div>
+        <!-- IMAGEM A SUBSTITUIR: capa do eBook. Tamanho sugerido 640x800px (proporção de capa de livro) -->
+        <div class="cover-frame">
+          <img src="img/capa.png" alt="Capa do eBook Gugû Dadá — Guia Completo de Introdução Alimentar" width="640" height="800">
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <!-- LINK A SUBSTITUIR: link de checkout -->
+        <a href="#" class="btn btn-primary">QUERO MEU EBOOK AGORA!</a>
+        <p class="secure-note">🔒 Compra 100% segura</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES STRIP ============ -->
+  <section class="features-strip" id="conteudo">
+    <div class="container">
+      <div class="section-head">
+        <span class="bowl-dots"><span></span><span></span><span></span></span>
+        <h2>Tudo o que você precisa em um só lugar!</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="icon-circle bg-peach"><svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></span>
+          <p>Receitas deliciosas para todas as fases: 6 a 24 meses</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon-circle bg-green"><svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+          <p>Cardápios semanais completos e balanceados</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon-circle bg-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/></svg></span>
+          <p>Dicas práticas para o dia a dia dos pais e cuidadores</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon-circle bg-blue"><svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M18.5 18.5 20 20M5 19l1.5-1.5M18.5 5.5 20 4"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <p>Guia de congelamento e armazenamento das refeições</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon-circle bg-lavender"><svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></span>
+          <p>Perguntas frequentes com respostas claras</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE: checklist + galeria + preço ============ -->
+  <section id="sobre">
+    <div class="container">
+      <div class="showcase-grid">
+
+        <div class="checklist-card">
+          <h2>Veja tudo o que você vai encontrar:</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Introdução Alimentar: por onde começar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Alimentos recomendados por fase</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100 receitas testadas e aprovadas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cardápios semanais de 6 a 24 meses</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Guia de congelamento e armazenamento</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dúvidas frequentes respondidas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> E muito mais!</li>
+          </ul>
+        </div>
+
+        <!-- 
+          IMAGENS IMPORTANTES PARA SUBSTITUIR:
+          Coloque 4 fotos reais de receitas/papinhas do seu eBook (quadradas 300x300 ou 400x400).
+          Use fotos apetitosas, bem iluminadas, de preferência com o bebê ou pratos prontos.
+          Isso aumenta MUITO a conversão.
+        -->
+        <div class="gallery-grid">
+          <img src="https://placehold.co/300x300/FBDCC9/2F4A32?text=SUBSTITUA+1" alt="Exemplo de papinha - substitua por foto real" width="300" height="300" loading="lazy" style="width:100%; border-radius:12px;">
+          <img src="https://placehold.co/300x300/DCE8D6/2F4A32?text=SUBSTITUA+2" alt="Exemplo de papinha - substitua por foto real" width="300" height="300" loading="lazy" style="width:100%; border-radius:12px;">
+        </div>
+
+        <div class="price-card">
+          <h3>Acesso imediato e para sempre! ❤</h3>
+          <p class="price-old">De R$ 67,90</p>
+          <p class="price-label">por apenas</p>
+          <p class="price-now"><sup>R$</sup>17,90</p>
+          <!-- LINK A SUBSTITUIR: link de checkout -->
+          <a href="#" class="btn btn-primary btn-block">QUERO MEU EBOOK AGORA!</a>
+          <p class="secure-note">🔒 Pagamento 100% seguro</p>
+          <p class="secure-note">✉️ Você recebe o acesso na hora!</p>
+
+          <!-- Pagamento -->
+          <div class="payment-box">
+            <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 220px; width:100%; height:auto; display:block; margin: 0 auto;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTEMUNHOS ============ -->
+  <section id="depoimentos">
+    <div class="container">
+      <div class="section-head">
+        <span class="bowl-dots"><span></span><span></span><span></span></span>
+        <h2>Quem já adquiriu, recomenda! ❤</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+          </div>
+          <p class="quote">As receitas são práticas e meu bebê amou todas! Os cardápios semanais me ajudaram demais no dia a dia.</p>
+          <div class="testimonial-author">
+            <!-- IMAGEM A SUBSTITUIR: foto real da cliente (círculo 120x120px). Use fotos de verdade de clientes ou avatares bonitos -->
+            <img src="https://placehold.co/120x120/DCE8D6/2F4A32?text=J" alt="Foto de Juliana M." loading="lazy">
+            <strong>Juliana M.</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+          </div>
+          <p class="quote">Conteúdo completo, organizado e feito com muito carinho. Superou minhas expectativas em todos os sentidos!</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/120x120/FBDCC9/2F4A32?text=C" alt="Foto de Camila R." loading="lazy">
+            <strong>Camila R.</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+          </div>
+          <p class="quote">Finalmente um guia que fala de tudo que precisamos nessa fase. Vale cada centavo, recomendo de olhos fechados!</p>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/120x120/F2C14E/2F4A32?text=F" alt="Foto de Fernanda L." loading="lazy">
+            <strong>Fernanda L.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GARANTIA ============ -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="guarantee-banner">
+        <div class="guarantee-left">
+          <span class="shield-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2F4A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M12 2 4 5v6c0 6 8 11 8 11s8-5 8-11V5l-8-3Z"/><polyline points="9 12 11.5 14.5 16 9.5"/></svg>
+          </span>
+          <div>
+            <h3>Garantia incondicional de 7 dias</h3>
+            <p>Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+          </div>
+        </div>
+        <div class="guarantee-seal">
+          <strong>7</strong>
+          <span>DIAS</span>
+          <span>GARANTIA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ + CTA FINAL ============ -->
+  <section id="faq">
+    <div class="container faq-final-grid">
+
+      <div class="faq-col">
+        <h2>Dúvidas frequentes</h2>
+
+        <details class="faq-item" open>
+          <summary>Como vou receber o eBook?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Assim que o pagamento é confirmado, você recebe automaticamente o link de acesso por e-mail em poucos minutos.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Por quanto tempo terei acesso?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">O acesso é imediato e vitalício. Você pode consultar o guia sempre que quiser, sem prazo de validade.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Posso acessar pelo celular?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Sim! O eBook funciona perfeitamente em celular, tablet e computador, basta um leitor de PDF.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>O material é em PDF?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Sim, você recebe um arquivo em PDF de alta qualidade, pronto para ler na tela ou imprimir.</p>
+        </details>
+		<details class="faq-item">
+          <summary>Pra quem é indicado esse eBook?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Este eBook é indicado para pais, mães e cuidadores de bebês de 6 a 24 meses que desejam oferecer uma alimentação mais saudável, prática e segura no dia a dia. Ele também é ideal para quem está iniciando a introdução alimentar ou quer melhorar a rotina alimentar do bebê com receitas simples, testadas e adaptadas para cada fase do desenvolvimento.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu não gostar do conteúdo?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Você tem 7 dias de garantia incondicional. Se não ficar satisfeita, devolvemos 100% do valor pago.</p>
+        </details>
+      </div>
+
+      <div class="contact-side">
+        <h3 class="side-title">Dúvidas? Fale conosco!</h3>
+        <form id="fale-conosco" class="contact-form" onsubmit="handleContactForm(event)">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+          </div>
+          <button type="submit" class="btn-send">Enviar mensagem</button>
+        </form>
+        <p class="form-note">Respondemos em até 24h úteis.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div>
+      <img src="img/Logo.png" alt="Gugû Dadá" style="height: 58px; width: auto; object-fit: contain;">
+    </div>
+
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Gugû Dadá. Todos os direitos reservados. • <a href="mailto:gugudada.mkt@gmail.com" style="color:inherit;">gugudada.mkt@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra de compra fixa (só aparece no mobile via CSS) - ótima para conversão -->
+<!-- LINK A SUBSTITUIR: troque o href por seu link de checkout em TODOS os lugares -->
+<div class="mobile-sticky-cta">
+  <a href="#">🔥 QUERO MEU EBOOK AGORA por R$ 17,90</a>
+</div>
+
+<script>
+// ROBUST MOBILE MENU: JS toggle + 'open' class + full ARIA (fixes checkbox ~ selector failures).
+// Logic: label click toggles native checkbox -> 'change' updates class+aria.
+// All closes (link/out/esc) call setOpen(false) which syncs checked + class + aria.
+// Tested mentally: open/close cycles, outside clicks, esc, link nav, no race conditions.
+(function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const label = document.querySelector('.menu-toggle-label');
+  if (!menuToggle || !nav || !label) return;
+
+  function setOpen(isOpen) {
+    menuToggle.checked = isOpen;
+    if (isOpen) {
+      nav.classList.add('open');
+    } else {
+      nav.classList.remove('open');
+    }
+    label.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  // Initial state
+  setOpen(false);
+
+  // User toggle via checkbox (label click triggers this reliably)
+  menuToggle.addEventListener('change', () => {
+    setOpen(menuToggle.checked);
+  });
+
+  // Extra direct click on label for ultra reliability (ensures class even if timing)
+  label.addEventListener('click', function(e) {
+    // Native for= will have toggled checked by the time handler runs in most browsers.
+    // Use rAF + explicit to guarantee sync.
+    requestAnimationFrame(() => {
+      setOpen(menuToggle.checked);
+    });
+  });
+
+  // Fecha ao clicar link da nav (close immediately)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      setOpen(false);
+    });
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') &&
+        !nav.contains(e.target) &&
+        !label.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+
+  // ESC fecha
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      setOpen(false);
+    }
+  });
+})();
+
+// Particles: force clean start after load (initial opacity:0 + .ready class).
+// Prevents "stuck" flash between header/hero on reload. Animation starts only after paint.
+(function() {
+  const particles = document.querySelector('.particles');
+  if (!particles) return;
+
+  // Use DOMContentLoaded + tiny timeout to guarantee styles applied, no initial visible opacity
+  const startParticles = () => {
+    // Ensure spans are at 0 before kicking animation
+    particles.querySelectorAll('span').forEach(s => { s.style.opacity = '0'; });
+    // Trigger the ready state which fades container in + starts keyframes from 0%
+    requestAnimationFrame(() => {
+      particles.classList.add('ready');
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(startParticles, 16));
+  } else {
+    setTimeout(startParticles, 16);
+  }
+})();
+
+// Contact form handler (fake for now - replace with real integration)
+function handleContactForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-send');
+  const original = btn.textContent;
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.textContent = 'Mensagem enviada! ✓';
+    btn.style.background = 'var(--green)';
+    e.target.reset();
+
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 1800);
+  }, 700);
+}
+
+</script>
+
+</body>
+</html>
