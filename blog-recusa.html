@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recusa Alimentar em Bebês: Estratégias Comprovadas e Carinhosas | Gugû Dadá</title>
+<meta name="description" content="Guia completo de recusa alimentar na introdução alimentar: por que acontece, quantas exposições são necessárias, estratégias sem pressão, alimentação responsiva e quando procurar ajuda. Baseado em SBP 2024 e OMS.">
+<meta name="keywords" content="recusa alimentar bebê, recusa de alimentos, introdução alimentar recusa, neofobia alimentar, alimentação responsiva, como fazer bebê comer, SBP OMS">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.seudominio.com.br/blog-recusa.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recusa Alimentar em Bebês: O Que Fazer? Guia Prático | Gugû Dadá">
+<meta property="og:description" content="Aprenda estratégias comprovadas para lidar com recusa alimentar sem pressão. Dicas de alimentação responsiva baseadas em ciência da SBP 2024 e OMS.">
+<meta property="og:image" content="img/capa.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.seudominio.com.br/blog-recusa.html">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23EE7A52'/%3E%3Cpath d='M50 75 C20 55 25 30 45 32 C50 33 50 38 50 38 C50 38 50 33 55 32 C75 30 80 55 50 75Z' fill='%23FBF6EC'/%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* TOKENS */
+:root{
+  --cream:        #FBF6EC; --cream-soft:   #F6EFE0; --green-deep:   #2F4A32;
+  --green:        #6E9A6B; --green-soft:   #DCE8D6; --peach:        #EE7A52;
+  --peach-dark:   #DE6A42; --peach-soft:   #FBDCC9; --yellow:       #F2C14E;
+  --lavender:     #C7B6D9; --text:         #4A4438; --text-light:   #8A8273;
+  --white:        #FFFFFF; --radius-lg: 28px; --radius-md: 18px; --radius-sm: 12px;
+  --shadow-soft: 0 18px 40px rgba(47,74,50,0.09); --shadow-card: 0 10px 26px rgba(47,74,50,0.07);
+  --container: 1180px;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Quicksand', sans-serif; color:var(--text); background:var(--cream); line-height:1.7; }
+img{ max-width:100%; display:block; } a{ text-decoration:none; color:inherit; } ul{ list-style:none; }
+h1,h2,h3,h4{ font-family:'Fredoka', sans-serif; color:var(--green-deep); font-weight:600; line-height:1.25; }
+.container{ width:100%; max-width:var(--container); margin:0 auto; padding:0 24px; }
+section{ padding:72px 0; }
+:focus-visible{ outline:3px solid var(--peach); outline-offset:3px; border-radius:6px; }
+.bowl-dots{ display:inline-flex; align-items:center; gap:5px; vertical-align:middle; }
+.bowl-dots span{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+.bowl-dots span:nth-child(1){ background:var(--green); } .bowl-dots span:nth-child(2){ background:var(--yellow); }
+.bowl-dots span:nth-child(3){ background:var(--lavender); }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:'Fredoka', sans-serif; font-weight:600;
+  font-size:16px; letter-spacing:.3px; padding:17px 34px; border-radius:999px; border:none; cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease; white-space:nowrap; }
+.btn-primary{ background:linear-gradient(135deg, var(--peach), var(--peach-dark)); color:var(--white);
+  box-shadow:0 14px 28px rgba(222,106,66,0.35); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px rgba(222,106,66,0.42); }
+.site-header{ position:sticky; top:0; z-index:220; background: #FFFBF5; backdrop-filter:blur(8px); border-bottom:1px solid rgba(47,74,50,0.06); }
+.logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
+.logo-img { height: 72px; width: auto; object-fit: contain; display: block; }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:12px 20px; min-height: 64px; }
+.main-nav ul{ display:flex; gap:28px; } .main-nav a{ font-weight:600; font-size:15px; color:var(--green-deep); transition:color .15s ease; padding:4px 2px; }
+.main-nav a:hover{ color:var(--peach); }
+.header-cta{ display:flex; align-items:center; gap:16px; } .header-cta .btn{ padding:12px 24px; font-size:14.5px; }
+.menu-toggle-input{ display:none; } .menu-toggle-label{ display:none; font-size:26px; cursor:pointer; color:var(--green-deep); }
+
+/* Mobile-only CTA inside nav (shown only <=760px) */
+.mobile-nav-cta { display: none; }
+
+@media (max-width: 760px) {
+  .logo-img { height: 52px; } .header-inner { padding: 8px 16px; }
+  .main-nav { position: fixed; top: 64px; left: 0; right: 0; max-height: 0; overflow: hidden; visibility: hidden; transition: max-height .28s ease; z-index: 250; }
+  .main-nav.open { background: var(--cream); padding: 8px 20px 18px; box-shadow: var(--shadow-soft); border-bottom: 1px solid rgba(47,74,50,0.08); visibility: visible; max-height: 360px; z-index: 350; }
+  .main-nav ul { flex-direction: column; gap: 4px; padding: 8px 0; } .main-nav a { display: block; padding: 12px 10px; font-size: 15.5px; border-radius: 8px; }
+  .main-nav a:hover { background: var(--green-soft); color: var(--green-deep); }
+  .menu-toggle-label { display: block; font-size: 28px; padding: 2px 8px; cursor: pointer; margin-left: auto; }
+  .header-cta { display: none !important; }
+
+  /* Mobile CTA button */
+  .mobile-nav-cta { display: list-item; margin-top: 10px; }
+  .main-nav .mobile-nav-cta a { display:block; width:100%; text-align:center; padding:15px 20px; font-size:15.5px; border-radius:999px; box-shadow:0 10px 24px rgba(222,106,66,0.35); color:#fff !important; }
+  .main-nav .mobile-nav-cta a:hover { transform:translateY(-1px); box-shadow:0 14px 30px rgba(222,106,66,0.42); }
+}
+.article-hero { background: linear-gradient(180deg, var(--cream-soft) 0%, var(--cream) 100%); padding: 48px 0 32px; }
+.article-hero .container { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: center; }
+.article-hero-content h1 { font-size: 38px; line-height: 1.15; margin-bottom: 16px; }
+.article-hero-content .meta { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--text-light); margin-bottom: 18px; }
+.article-hero-content .meta span { display: inline-flex; align-items: center; gap: 6px; }
+.article-hero-content .lead { font-size: 17.5px; color: var(--text); max-width: 540px; }
+.article-hero-image .frame { background: var(--white); border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-card); }
+.article-body { padding: 40px 0 20px; }
+.article-content { font-size: 16.5px; line-height: 1.75; max-width: 780px; margin: 0 auto; }
+.article-content p { margin-bottom: 18px; } .article-content h2 { font-size: 26px; margin: 42px 0 16px; }
+.article-content h3 { font-size: 21px; margin: 28px 0 12px; color: var(--green); }
+.article-content ul { margin: 14px 0 20px; padding-left: 22px; } .article-content ul li { margin-bottom: 9px; }
+.article-content strong { color: var(--green-deep); }
+.highlight-box { background: var(--peach-soft); border-left: 6px solid var(--peach); padding: 24px 28px; border-radius: var(--radius-sm); margin: 28px 0; }
+.highlight-box p { margin: 0; }
+.references { background: var(--white); border-radius: var(--radius-md); padding: 28px 32px; box-shadow: var(--shadow-card); margin: 50px 0; }
+.references h3 { margin-bottom: 18px; font-size: 19px; } .references ul li { margin-bottom: 11px; font-size: 14.8px; }
+.references a { color: var(--green); text-decoration: underline; } .references a:hover { color: var(--peach); }
+.other-articles { background: var(--cream-soft); padding: 64px 0; }
+.other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.other-card { background: var(--white); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-card); transition: transform .22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .22s ease; display: flex; flex-direction: column; }
+.other-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(47,74,50,0.13); }
+.other-card h4 { font-size: 17px; margin-bottom: 10px; line-height: 1.3; }
+.other-card p { font-size: 14.5px; color: var(--text-light); flex: 1; margin-bottom: 14px; }
+.other-card .read-link { color: var(--peach); font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
+.other-card:hover .read-link { gap: 10px; }
+.faq-section { background: var(--white); }
+.faq-item { background: var(--cream); border-radius: var(--radius-sm); margin-bottom: 10px; box-shadow: var(--shadow-card); overflow: hidden; }
+.faq-item summary { list-style: none; cursor: pointer; padding: 19px 24px; display: flex; align-items: center; justify-content: space-between; font-weight: 600; color: var(--green-deep); font-size: 15.5px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .chev { transition: transform .2s ease; flex-shrink: 0; margin-left: 14px; }
+.faq-item[open] summary .chev { transform: rotate(180deg); }
+.faq-item .faq-answer { padding: 0 24px 20px; font-size: 14.8px; }
+.contact-section { background: var(--cream-soft); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.contact-form .form-group { margin-bottom: 16px; }
+.contact-form label { display: block; font-size: 13.5px; font-weight: 600; color: #5f5a53; margin-bottom: 5px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 13px 16px; border: 1px solid #d8d0c4; border-radius: 12px; font-size: 15px; font-family: inherit; background: #fff; color: var(--text); transition: border-color .2s ease, box-shadow .2s ease; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 0 4px rgba(110, 154, 107, 0.1); }
+.contact-form textarea { min-height: 110px; resize: vertical; }
+.form-actions { display: flex; gap: 12px; align-items: center; }
+.btn-send { background: linear-gradient(135deg, var(--peach), var(--peach-dark)); color: var(--white); border: none; padding: 14px 32px; border-radius: 999px; font-size: 15px; font-weight: 600; font-family: 'Fredoka', sans-serif; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
+.btn-send:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(222, 106, 66, 0.35); }
+.form-note { font-size: 13px; color: var(--text-light); }
+footer{ background:var(--green-deep); color:rgba(251,246,236,0.85); padding:46px 0 28px; }
+.footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; border-top:1px solid rgba(251,246,236,0.12); padding-top:24px; margin-top:30px; }
+footer .logo-text{ color:var(--cream); font-size:22px; }
+.footer-links{ display:flex; gap:24px; font-size:13.5px; } .footer-links a:hover{ color:var(--yellow); }
+.footer-copy{ font-size:13px; color:rgba(251,246,236,0.55); }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 0.6s ease forwards; }
+.other-card { animation: fadeInUp 0.55s ease forwards; }
+.article-tip { background: #fff; border: 1px solid var(--green-soft); padding: 16px 20px; border-radius: var(--radius-sm); display: flex; gap: 12px; margin: 20px 0; }
+.article-tip svg { flex-shrink: 0; margin-top: 3px; }
+@media (max-width: 980px) { .article-hero .container { grid-template-columns: 1fr; } .article-hero-image { max-width: 340px; margin: 0 auto; } .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .article-hero-content h1 { font-size: 29px; } .article-body { padding: 20px 0; } section { padding: 52px 0; } .other-grid { grid-template-columns: 1fr; } .footer-inner { flex-direction: column; text-align: center; } }
+.toc { background: var(--white); padding: 18px 22px; border-radius: var(--radius-sm); margin: 26px 0; box-shadow: var(--shadow-card); font-size: 14.8px; }
+.toc strong { display: block; margin-bottom: 10px; color: var(--green-deep); }
+.toc a { display: block; padding: 4px 0; color: var(--text); transition: color .15s; }
+.toc a:hover { color: var(--peach); }
+</style>
+</head>
+
+<body>
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="img/Logo.png" alt="Gugû Dadá" class="logo-img"></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle-label" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="main-nav">☰</label>
+    <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#topo">Início</a></li>
+        <li><a href="index.html#conteudo">Sobre o eBook</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#fale-conosco">Fale Conosco!</a></li>
+        <li class="mobile-nav-cta"><a href="index.html" class="btn btn-primary">Quero meu eBook</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta"><a href="index.html" class="btn btn-primary"><span class="btn-text">Quero meu eBook</span></a></div>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a> <span style="margin:0 6px;">›</span> 
+        <a href="index.html#blog">Blog</a> <span style="margin:0 6px;">›</span> 
+        <span>Recusa Alimentar</span>
+      </div>
+      <h1>Recusa Alimentar em Bebês: Estratégias Comprovadas e Cheias de Amor para Superar Juntos</h1>
+      <div class="meta">
+        <span>📅 Atualizado em Junho 2026</span>
+        <span>⏱️ 14 min de leitura</span>
+        <span>🍼 Baseado em SBP 2024 e OMS 2023</span>
+      </div>
+      <p class="lead">A recusa alimentar é uma das maiores preocupações dos pais — e ao mesmo tempo uma das fases mais normais e esperadas da introdução alimentar. Estudos mostram que são necessárias em média 10 a 15 exposições positivas para que o bebê aceite um novo alimento. Neste guia acolhedor e baseado em ciência da SBP 2024 e OMS, você vai entender as causas reais da recusa, aprender estratégias carinhosas e eficazes sem pressão, praticar alimentação responsiva e transformar as refeições em momentos de conexão e alegria. Seu amor e paciência fazem toda a diferença.</p>
+    </div>
+    <div class="article-hero-image">
+      <div class="frame">
+        <svg width="320" height="280" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <rect x="20" y="40" width="280" height="200" rx="24" fill="#F6EFE0"/>
+          <ellipse cx="160" cy="138" rx="92" ry="76" fill="#DCE8D6"/>
+          <path d="M120 115 Q160 90 200 115" stroke="#EE7A52" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="135" cy="145" r="8" fill="#6E9A6B"/><circle cx="185" cy="145" r="8" fill="#6E9A6B"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <article class="container article-body">
+    <div class="article-content fade-in">
+
+      <p>A recusa alimentar é uma das maiores preocupações dos pais — e também uma das fases mais normais e esperadas da introdução alimentar. Estudos mostram que são necessárias em média 10 a 15 exposições positivas para que o bebê aceite um novo alimento. A recusa não significa que seu bebê “não gosta” ou que você está errando. É parte natural do desenvolvimento e da neofobia (medo do novo). Você não está sozinha nessa jornada — é um momento comum que, com as estratégias certas, vira uma oportunidade linda de conexão e crescimento para toda a família.</p>
+
+      <p>Neste guia acolhedor e baseado na SBP 2024 e OMS, você vai entender as causas reais, aprender estratégias carinhosas e eficazes sem pressão, praticar alimentação responsiva e transformar as refeições em momentos de conexão e alegria. Com paciência, consistência e as ferramentas certas, essa fase vira uma vitória linda para toda a família e fortalece o vínculo com seu bebê.</p>
+
+      <div class="toc">
+        <strong>📋 Neste artigo:</strong>
+        <a href="#por-que-recusa">1. Por Que o Bebê Recusa Alimentos?</a>
+        <a href="#normal">2. É Normal? Quantas Exposições São Necessárias?</a>
+        <a href="#estrategias">3. Estratégias Comprovadas Sem Pressão</a>
+        <a href="#alimentacao-responsiva">4. Alimentação Responsiva: O Papel dos Pais</a>
+        <a href="#erros">5. Erros que Pioram a Recusa</a>
+        <a href="#quando-procurar">6. Quando Procurar um Profissional?</a>
+        <a href="#esperanca">7. A Recusa Passa: Esperança e Confiança para o Futuro</a>
+      </div>
+
+      <h2 id="por-que-recusa">1. Por Que o Bebê Recusa Alimentos?</h2>
+      <p>A recusa pode ter várias causas, e entender o “por quê” traz alívio imediato para o coração dos pais. Não é teimosia — é desenvolvimento normal e esperado.</p>
+      <ul>
+        <li><strong>Neofobia alimentar:</strong> Medo natural do novo (pico entre 2-6 anos, mas aparece cedo). É um mecanismo de proteção evolutivo.</li>
+        <li><strong>Textura ou temperatura:</strong> O bebê pode não gostar da consistência ou temperatura.</li>
+        <li><strong>Saciedade:</strong> Se tomou muito leite antes, pode não ter fome suficiente.</li>
+        <li><strong>Distrações:</strong> Ambiente com TV, barulho ou muitas pessoas.</li>
+        <li><strong>Pressão dos pais:</strong> A pressão aumenta a recusa (efeito rebote).</li>
+        <li><strong>Desenvolvimento:</strong> Fases de independência ou desconforto (dentes, refluxo).</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>Importante:</strong> Recusa persistente de vários grupos alimentares ou perda de peso merece avaliação médica. Na maioria dos casos é fase normal e passageira quando manejada corretamente, com paciência e amor.</p>
+      </div>
+
+      <h2 id="normal">2. É Normal? Quantas Exposições São Necessárias?</h2>
+      <p>Sim, é normal e cientificamente esperado. Pesquisas (incluindo revisões da OMS e estudos brasileiros) mostram que:</p>
+      <ul>
+        <li>Crianças podem precisar de <strong>8 a 15 exposições</strong> repetidas antes de aceitar um alimento.</li>
+        <li>Exposições devem ser positivas, sem pressão, com modelagem dos pais comendo o mesmo alimento com prazer.</li>
+        <li>A rejeição inicial diminui com consistência e paciência amorosa.</li>
+      </ul>
+      <p>Imagine: a décima ou décima quinta vez que você oferece brócolis pode ser a que ele finalmente experimenta. Essa persistência carinhosa é o que constrói aceitação duradoura e uma relação positiva com a comida.</p>
+
+      <h2 id="estrategias">3. Estratégias Comprovadas Sem Pressão</h2>
+      <ul>
+        <li><strong>Ofereça repetidamente:</strong> Continue oferecendo o alimento rejeitado em outras refeições, sem forçar nunca.</li>
+        <li><strong>Modelo positivo:</strong> Coma o mesmo alimento na frente do bebê com prazer e expressões felizes.</li>
+        <li><strong>Ambiente calmo:</strong> Refeições sem distrações (TV, celular, brinquedos).</li>
+        <li><strong>Deixe tocar e brincar:</strong> Exploração sensorial é parte do aprendizado e da diversão.</li>
+        <li><strong>Combine com aceitos:</strong> Sirva o novo alimento ao lado de algo que ele já gosta.</li>
+        <li><strong>Respeite sinais:</strong> Quando o bebê vira a cabeça, fecha a boca ou empurra, respeite — fim da refeição.</li>
+        <li><strong>Variedade sem pressão:</strong> Ofereça variedade ao longo da semana, mas não force no prato.</li>
+      </ul>
+
+      <h2 id="alimentacao-responsiva">4. Alimentação Responsiva: O Papel dos Pais</h2>
+      <p>Alimentação responsiva significa responder aos sinais de fome e saciedade do bebê, promovendo autonomia e confiança. Recomendada pela OMS e SBP. Você oferece, o bebê decide o quanto e se quer.</p>
+      <ul>
+        <li>Observe: Fome = interesse, abertura da boca. Saciedade = virar cabeça, fechar boca, distrair-se.</li>
+        <li>Ofereça, não force. O bebê decide quanto comer e quando parar.</li>
+        <li>Crie rotina previsível de refeições.</li>
+        <li>Evite “aviõezinho”, chantagem ou recompensas com comida.</li>
+        <li>Faça da refeição um momento de conexão familiar, sem pressa.</li>
+      </ul>
+
+      <h2 id="erros">5. Erros que Pioram a Recusa</h2>
+      <ul>
+        <li>Forçar ou insistir demais (“só mais uma colher”).</li>
+        <li>Distrair com telas ou brinquedos durante as refeições.</li>
+        <li>Oferecer apenas alimentos “seguros” que ele aceita, reduzindo exposição a novos.</li>
+        <li>Punir ou mostrar frustração na hora da refeição.</li>
+        <li>Substituir refeições por leite ou lanches doces com frequência.</li>
+      </ul>
+      <p>Evitar esses erros comuns traz paz para a mesa e fortalece o vínculo com seu bebê. A calma dos pais faz toda a diferença.</p>
+
+      <h2 id="quando-procurar">6. Quando Procurar um Profissional?</h2>
+      <p>Procure pediatra ou nutricionista infantil se:</p>
+      <ul>
+        <li>Recusa persistente de vários grupos alimentares por semanas.</li>
+        <li>Perda de peso ou estagnação do crescimento.</li>
+        <li>Sinais de dor ao engolir ou engasgos frequentes.</li>
+        <li>Ansiedade extrema dos pais afetando o vínculo e o prazer das refeições.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p>❤️ A recusa é uma fase. Com paciência, consistência e respeito ao ritmo do bebê, a maioria das crianças supera e desenvolve relação positiva com a comida. Seu amor e calma fazem toda a diferença e criam memórias lindas na mesa.</p>
+      </div>
+
+      <h2 id="esperanca">7. A Recusa Passa: Esperança e Confiança para o Futuro</h2>
+      <p>Lembre-se sempre: a recusa é temporária. A maioria dos bebês supera essa fase com consistência amorosa e sem pressão. Com o tempo, seu filho vai aceitar mais alimentos e desenvolver uma relação saudável e alegre com a comida.</p>
+      <p>Você está fazendo um trabalho incrível ao escolher estratégias carinhosas e baseadas em ciência. Cada refeição é uma oportunidade de conexão. Com paciência e amor, essa fase vai passar e vocês terão memórias lindas de superação e crescimento juntos. O futuro da mesa da sua família é brilhante.</p>
+
+      <!-- NOVA SEÇÃO CTA EBOOK - IMAGE + TEXT SIDE-BY-SIDE -->
+      <div>
+        <img src="img/capa.png" alt="Capa do eBook Gugû Dadá — Guia Completo de Introdução Alimentar">
+        <div>
+          <h3>Transforme a Recusa em Aceitação com Estratégias Carinhosas</h3>
+          <p>Com mais de 100 receitas variadas, planos de exposição repetida e técnicas de alimentação responsiva, você transforma as refeições em momentos de conexão e alegria. Recusa é normal — com o guia certo ela vira uma fase superada com amor.</p>
+          <p>Planos de exposição + dicas para 10-15 exposições + suporte emocional para pais que querem paz na mesa. Tenha o apoio prático e carinhoso que você precisa para essa jornada.</p>
+          <p>Receba todo o suporte organizado para facilitar o dia a dia e trazer tranquilidade ao coração de toda a família.</p>
+        </div>
+      </div>
+      <a href="index.html" class="btn btn-primary">❤️ Quero Transformar a Recusa com Amor</a>
+      <p>Acesso imediato • R$ 17,90 • Garantia de 7 dias</p>
+
+      <div class="references">
+        <h3>📚 Referências Científicas e Oficiais (2023–2026)</h3>
+        <ul>
+          <li><strong>Sociedade Brasileira de Pediatria (SBP)</strong>. Manual de Alimentação 5ª ed. 2024.</li>
+          <li><strong>World Health Organization (OMS)</strong>. Guideline Complementary feeding 6–23 months. 2023.</li>
+          <li><strong>Ministério da Saúde</strong>. Guia Alimentar para Crianças Brasileiras Menores de 2 Anos.</li>
+        </ul>
+        <p style="font-size:13px; margin-top:14px; color:var(--text-light);">Conteúdo fundamentado em evidências e diretrizes oficiais.</p>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="other-articles">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:32px; text-align:center;">
+        <span class="bowl-dots"><span></span><span></span><span></span></span>
+        <h2 style="font-size:27px;">Outros artigos que você vai amar</h2>
+        <p style="max-width:520px; margin:12px auto 0; color:var(--text-light);">Continue sua jornada com mais orientações práticas e baseadas em ciência.</p>
+      </div>
+      <div class="other-grid">
+        <a href="blog-primeiros-passos.html" class="other-card">
+          <h4>🍼 Introdução Alimentar aos 6 Meses: Sinais e Primeiros Passos</h4>
+          <p>Guia completo: quando começar, sinais de prontidão, primeiros alimentos e progressão de texturas segundo SBP e OMS.</p>
+          <span class="read-link">Ler artigo completo →</span>
+        </a>
+        <a href="blog-ferro.html" class="other-card">
+          <h4>⚡ Ferro: O Nutriente Mais Importante para Bebês</h4>
+          <p>Alimentos ricos em ferro, combinações que aumentam a absorção e como prevenir a anemia a partir dos 6 meses.</p>
+          <span class="read-link">Ler artigo completo →</span>
+        </a>
+        <a href="blog-texturas.html" class="other-card">
+          <h4>🥄 Texturas por Idade: Guia Sem Engasgos</h4>
+          <p>Do purê aos pedaços: como progredir as texturas de forma segura, divertida e adequada para cada fase.</p>
+          <span class="read-link">Ler artigo completo →</span>
+        </a>
+        <a href="index.html#blog" class="other-card">
+          <h4>🌰 Alergias Alimentares: Introdução Segura</h4>
+          <p>Como introduzir alérgenos comuns (ovo, amendoim, leite...) com segurança e quais sinais observar.</p>
+          <span class="read-link">Ver no Blog →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div style="max-width: 780px; margin: 0 auto;">
+        <div class="section-head" style="margin-bottom:28px; text-align:center;">
+          <span class="bowl-dots"><span></span><span></span><span></span></span>
+          <h2>Dúvidas frequentes</h2>
+        </div>
+        <details class="faq-item" open>
+          <summary>Quantas vezes devo oferecer um alimento rejeitado?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Em média 10 a 15 vezes. Ofereça em diferentes preparações e contextos, sempre sem pressão. A consistência é chave.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Posso substituir a refeição por leite se ele recusar?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Evite. Mantenha a rotina da refeição mesmo que ele coma pouco. Ofereça novamente na próxima refeição programada.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Meu bebê só come o que eu como. Isso é problema?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">É ótimo! Use isso a seu favor. Modele comendo alimentos saudáveis com prazer. Ele aprende observando você.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quando a recusa deixa de ser normal?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">Se houver perda de peso, recusa de quase todos os alimentos por longo período ou sinais de dor, procure avaliação profissional.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="fale-conosco">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="section-head" style="text-align:left; margin-bottom:18px;">
+            <span class="bowl-dots"><span></span><span></span><span></span></span>
+            <h2 style="font-size:26px;">Ficou com dúvidas sobre recusa?</h2>
+          </div>
+          <p style="font-size:15.5px; max-width:420px;">Envie sua mensagem. Nossa equipe responde em até 24h úteis com carinho e atenção.</p>
+        </div>
+        <div>
+          <form class="contact-form" action="mailto:gugudada.mkt@gmail.com" method="post" enctype="text/plain" onsubmit="prepareMailto(event)">
+            <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome" required></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="seu@email.com" required></div>
+            <div class="form-group"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" placeholder="Olá! Meu bebê está recusando vários alimentos. O que posso fazer?" required></textarea></div>
+            <div class="form-actions"><button type="submit" class="btn-send">Enviar mensagem</button></div>
+            <p class="form-note">Ao enviar, seu cliente de e-mail será aberto com a mensagem pré-preenchida.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 8px;">
+      <img src="img/Logo.png" alt="Gugû Dadá" style="height: 72px; width: auto; object-fit: contain; display: block; margin: 0 auto;">
+    </div>
+    <div class="footer-inner">
+      <div><p class="footer-copy">© 2026 Gugû Dadá. Todos os direitos reservados. • <a href="mailto:gugudada.mkt@gmail.com" style="color:inherit;">gugudada.mkt@gmail.com</a></p></div>
+      <div class="footer-links"><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const label = document.querySelector('.menu-toggle-label');
+  if (!menuToggle || !nav || !label) return;
+  function setOpen(isOpen){ menuToggle.checked = isOpen; if(isOpen){nav.classList.add('open');}else{nav.classList.remove('open');} label.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); }
+  setOpen(false);
+  menuToggle.addEventListener('change', () => setOpen(menuToggle.checked));
+  label.addEventListener('click', function(){ requestAnimationFrame(() => setOpen(menuToggle.checked)); });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('click', (e) => { if (nav.classList.contains('open') && !nav.contains(e.target) && !label.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false); });
+})();
+function prepareMailto(e) {
+  e.preventDefault();
+  const form = e.target;
+  const nome = encodeURIComponent(form.nome.value || '');
+  const email = encodeURIComponent(form.email.value || '');
+  const mensagem = encodeURIComponent(form.mensagem.value || '');
+  const subject = encodeURIComponent('Contato pelo Blog: Recusa Alimentar');
+  const body = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\n\nMensagem:\n${mensagem}`);
+  window.location.href = `mailto:gugudada.mkt@gmail.com?subject=${subject}&body=${body}`;
+  const btn = form.querySelector('.btn-send');
+  if (btn) { const original = btn.textContent; btn.textContent = 'Abrindo e-mail...'; setTimeout(() => { btn.textContent = original; form.reset(); }, 1600); }
+}
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; observer.unobserve(entry.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.other-card, .faq-item, .references, .highlight-box').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity .6s ease, transform .6s ease'; observer.observe(el); });
+}
+window.addEventListener('load', () => { initScrollAnimations(); });
+</script>
+</body>
+</html>

@@ -320,7 +320,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .hero .container{
     display:grid;
     grid-template-columns:1.05fr 0.95fr;
-    gap: 32px 56px; /* vertical gap reduced for left column stack (intro above actions); horizontal for visual */
+    gap: 24px 48px;
     align-items:start;
     position: relative;
     z-index: 2; /* hero content above particles (z:1) */
@@ -524,10 +524,51 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .payment-box {
     background: var(--white);
     border-radius: var(--radius-md);
-    padding: 14px 18px;
+    padding: 8px 12px;
     box-shadow: var(--shadow-card);
     margin-top: 10px;
     text-align: center;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Lightbox for capa only */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .modal-content img {
+    width: auto;
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .close:hover {
+    color: #ffeb3b;
   }
 
   /* =================== TESTIMONIALS =================== */
@@ -718,7 +759,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .gallery-grid { max-width: 380px; margin: 0 auto; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .faq-final-grid { grid-template-columns: 1fr; gap: 28px; }
-    .hero-visual .cover-frame { width: 82%; max-width: 300px; }
+    .hero-visual .cover-frame { width: 88%; max-width: 360px; }
     .hero-visual .blob { width: 300px; height: 300px; }
   }
 
@@ -797,6 +838,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
       font-size: 15.5px;
       border-radius: 999px;
       box-shadow: 0 10px 24px rgba(222,106,66,0.35);
+      color: #fff !important;
     }
     .main-nav .mobile-nav-cta a:hover {
       transform: translateY(-1px);
@@ -810,7 +852,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .hero .container {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 8px;
       align-items: center;
       text-align: center;
     }
@@ -818,6 +860,18 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .hero-actions {
       width: 100%;
       text-align: center;
+    }
+    .hero-actions .btn {
+      display: none !important;
+    }
+    .hero-actions {
+      text-align: center;
+    }
+    .hero-actions .secure-note {
+      margin-top: 0;
+      justify-content: center;
+      display: flex;
+      align-items: center;
     }
     .hero-intro .eyebrow {
       margin-left: auto;
@@ -845,6 +899,13 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .guarantee-seal { width: 78px; height: 78px; }
     
     .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+  footer .container > div:first-child {
+    text-align: center;
+  }
+  footer .container > div:first-child img {
+    margin: 0 auto;
+    display: block;
+  }
     .price-now { font-size: 44px; }
     .price-card { padding: 32px 26px; }
   }
@@ -858,8 +919,8 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .gallery-grid { max-width: 100%; }
     .price-now { font-size: 38px; }
     .checklist-card, .price-card { padding: 28px 22px; }
-    .hero-visual .cover-frame { width: 76%; max-width: 280px; border-width: 4px; padding: 4px; margin: 4px auto; }
-    .hero-visual .cover-frame img { max-height: 340px; }
+    .hero-visual .cover-frame { width: 82%; max-width: 320px; border-width: 4px; padding: 4px; margin: 4px auto; }
+    .hero-visual .cover-frame img { max-height: 380px; }
     .hero-visual .blob { display: none; }
     .eyebrow { font-size: 10.5px; padding: 6px 12px; letter-spacing: .2px; }
   }
@@ -928,6 +989,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
       <ul>
         <li><a href="#topo">Início</a></li>
         <li><a href="#conteudo">Sobre o eBook</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#fale-conosco">Fale Conosco!</a></li>
         <li class="mobile-nav-cta"><a href="#" class="btn btn-primary">Quero meu eBook</a></li>
@@ -968,7 +1030,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
         <div class="blob" aria-hidden="true"></div>
         <!-- IMAGEM A SUBSTITUIR: capa do eBook. Tamanho sugerido 640x800px (proporção de capa de livro) -->
         <div class="cover-frame">
-          <img src="img/capa.png" alt="Capa do eBook Gugû Dadá — Guia Completo de Introdução Alimentar" width="640" height="800">
+          <img id="capa-img" src="img/capa.png" alt="Capa do eBook Gugû Dadá — Guia Completo de Introdução Alimentar (clique para ampliar)" width="640" height="800" style="cursor: pointer;">
         </div>
       </div>
 
@@ -1054,7 +1116,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
           <!-- Pagamento -->
           <div class="payment-box">
-            <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 220px; width:100%; height:auto; display:block; margin: 0 auto;">
+            <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 160px; width:100%; height:auto; display:block; margin: 0 auto;">
           </div>
         </div>
 
@@ -1142,6 +1204,58 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <!-- ============ BLOG ============ -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-head">
+        <span class="bowl-dots"><span></span><span></span><span></span></span>
+        <h2>Blog: Alimentação e Saúde dos Bebês</h2>
+        <p style="text-align:center; max-width:600px; margin: 0 auto 30px;">Dicas práticas, evidências científicas e orientações para uma introdução alimentar tranquila e saudável.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <!-- Artigo 1 -->
+        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(0)">
+          <h3 style="font-size:18px; margin-bottom:8px;">Os Primeiros Passos na Introdução Alimentar</h3>
+          <p style="font-size:14px; color:var(--text-light);">Quando começar, sinais de prontidão e o que evitar nos primeiros meses.</p>
+          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+        </div>
+        <!-- Artigo 2 -->
+        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(1)">
+          <h3 style="font-size:18px; margin-bottom:8px;">Ferro: O Nutriente Mais Importante para Bebês</h3>
+          <p style="font-size:14px; color:var(--text-light);">Alimentos ricos em ferro, combinações que aumentam absorção e prevenção da anemia.</p>
+          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+        </div>
+        <!-- Artigo 3 -->
+        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(2)">
+          <h3 style="font-size:18px; margin-bottom:8px;">Texturas por Idade: Guia Sem Engasgos</h3>
+          <p style="font-size:14px; color:var(--text-light);">Do purê aos pedaços: como progredir as texturas de forma segura e divertida.</p>
+          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+        </div>
+        <!-- Artigo 4 -->
+        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(3)">
+          <h3 style="font-size:18px; margin-bottom:8px;">Recusa Alimentar: O Que Fazer?</h3>
+          <p style="font-size:14px; color:var(--text-light);">Estratégias comprovadas para lidar com o bebê que rejeita novos alimentos.</p>
+          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+        </div>
+        <!-- Artigo 5 -->
+        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(4)">
+          <h3 style="font-size:18px; margin-bottom:8px;">Alergias Alimentares: Introdução Segura</h3>
+          <p style="font-size:14px; color:var(--text-light);">Como introduzir alérgenos comuns e sinais de alerta para os pais.</p>
+          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Modals -->
+  <div id="blog-modal" class="modal" onclick="closeBlogModal()">
+    <div class="modal-content" style="background:#fff; padding:30px; max-width:700px; border-radius:20px; max-height:85vh; overflow:auto;" onclick="event.stopImmediatePropagation()">
+      <span class="close" onclick="closeBlogModal()">&times;</span>
+      <div id="blog-modal-body"></div>
+    </div>
+  </div>
+
   <!-- ============ FAQ + CTA FINAL ============ -->
   <section id="faq">
     <div class="container faq-final-grid">
@@ -1213,13 +1327,70 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <!-- ============ REFERÊNCIAS ============ -->
+  <section id="referencias" style="padding: 40px 0; background: var(--cream-soft);">
+    <div class="container">
+      <div class="section-head">
+        <span class="bowl-dots"><span></span><span></span><span></span></span>
+        <h2>Referências e Bases Científicas</h2>
+        <p style="max-width: 620px; margin: 0 auto;">O conteúdo do nosso eBook é fundamentado nas principais diretrizes e estudos reconhecidos por especialistas em nutrição infantil no Brasil e no mundo:</p>
+      </div>
+
+      <div style="max-width: 700px; margin: 30px auto; display: grid; gap: 16px;">
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">📘</span>
+          <div>
+            <strong>Sociedade Brasileira de Pediatria (SBP)</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Manual de Orientação para a Alimentação Complementar</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">🇧🇷</span>
+          <div>
+            <strong>Ministério da Saúde – SUS</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Dez Passos para uma Alimentação Saudável para Crianças</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">🌍</span>
+          <div>
+            <strong>Organização Mundial da Saúde (OMS)</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Diretrizes de Alimentação Complementar</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">👶</span>
+          <div>
+            <strong>Academia Americana de Pediatria (AAP)</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Recomendações de Introdução de Alimentos</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">📖</span>
+          <div>
+            <strong>Guia Alimentar para a População Brasileira</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Ministério da Saúde</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
+          <span style="font-size:22px;">🔬</span>
+          <div>
+            <strong>Estudos sobre alergias alimentares e diversificação alimentar (2023-2026)</strong><br>
+            <span style="font-size:13px; color:var(--text-light);">Evidências atualizadas sobre introdução precoce de alérgenos</span>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:20px;">Todas as receitas e orientações foram elaboradas com base nessas fontes confiáveis.</p>
+    </div>
+  </section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
-    <div>
-      <img src="img/Logo.png" alt="Gugû Dadá" style="height: 58px; width: auto; object-fit: contain;">
+    <div style="text-align: center; margin-bottom: 8px;">
+      <img src="img/Logo.png" alt="Gugû Dadá" style="height: 72px; width: auto; object-fit: contain; display: block; margin: 0 auto;">
     </div>
 
     <div class="footer-inner">
@@ -1236,6 +1407,14 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 <!-- LINK A SUBSTITUIR: troque o href por seu link de checkout em TODOS os lugares -->
 <div class="mobile-sticky-cta">
   <a href="#">🔥 QUERO MEU EBOOK AGORA por R$ 17,90</a>
+</div>
+
+<!-- Lightbox Modal for Capa (only) -->
+<div id="capa-modal" class="modal">
+  <span class="close" onclick="closeCapaModal()">&times;</span>
+  <div class="modal-content">
+    <img src="img/capa.png" alt="Capa ampliada do eBook Gugû Dadá" style="max-height: 90vh; width: auto;">
+  </div>
 </div>
 
 <script>
@@ -1342,6 +1521,78 @@ function handleContactForm(e) {
       btn.disabled = false;
     }, 1800);
   }, 700);
+}
+
+// Lightbox for capa image only
+const capaImg = document.getElementById('capa-img');
+const capaModal = document.getElementById('capa-modal');
+
+if (capaImg && capaModal) {
+  capaImg.addEventListener('click', () => {
+    capaModal.style.display = 'flex';
+  });
+
+  // Close on click outside content or on X (X already has onclick)
+  capaModal.addEventListener('click', (e) => {
+    if (e.target === capaModal) {
+      capaModal.style.display = 'none';
+    }
+  });
+
+  // Close with ESC (enhance existing)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && capaModal.style.display === 'flex') {
+      capaModal.style.display = 'none';
+    }
+  });
+}
+
+function closeCapaModal() {
+  const modal = document.getElementById('capa-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+// Blog articles data
+const blogArticles = [
+  {
+    title: "Os Primeiros Passos na Introdução Alimentar",
+    content: "<p>A introdução alimentar começa idealmente aos 6 meses. Fique atento aos sinais de prontidão: o bebê consegue se sentar com apoio, mostra interesse pela comida e perde o reflexo de protrusão da língua.</p><p>Comece com alimentos de sabor suave e textura pastosa. Ofereça um alimento novo por vez e observe reações por 3-5 dias.</p><p>Evite mel antes de 1 ano e sal, açúcar e temperos industrializados.</p>"
+  },
+  {
+    title: "Ferro: O Nutriente Mais Importante para Bebês",
+    content: "<p>A partir dos 6 meses as reservas de ferro do bebê diminuem. Priorize carnes, feijões, lentilhas e vegetais folhosos escuros.</p><p>Combine com vitamina C (frutas cítricas, tomate) para melhorar a absorção. Evite chá e leite no mesmo horário das refeições ricas em ferro.</p><p>Nosso ebook traz receitas específicas ricas em ferro para cada fase.</p>"
+  },
+  {
+    title: "Texturas por Idade: Guia Sem Engasgos",
+    content: "<p>6-8 meses: purês e papinhas lisas. 9-12 meses: alimentos amassados com pedacinhos. Após 12 meses: alimentos em pedaços do tamanho do punho fechado do bebê.</p><p>Sempre supervise as refeições. Ofereça alimentos em formato de bastão para que o bebê segure e morda com segurança.</p><p>Pratique a técnica de engasgo seguro com os cuidadores.</p>"
+  },
+  {
+    title: "Recusa Alimentar: O Que Fazer?",
+    content: "<p>É normal o bebê rejeitar novos sabores nas primeiras 10-15 ofertas. Mantenha a calma e continue oferecendo sem pressão.</p><p>Faça das refeições um momento divertido e sem distrações (TV, tablet). Deixe o bebê tocar e explorar o alimento.</p><p>Se a recusa persistir, consulte um pediatra ou nutricionista infantil.</p>"
+  },
+  {
+    title: "Alergias Alimentares: Introdução Segura",
+    content: "<p>Introduza alérgenos comuns (ovo, amendoim, leite, peixe, trigo) a partir dos 6 meses, um de cada vez, em pequena quantidade.</p><p>Observe por 2 horas após a oferta. Sinais de alergia: inchaço, urticária, vômito, dificuldade para respirar.</p><p>Em caso de reação, procure atendimento médico imediatamente. O ebook traz orientações detalhadas e receitas seguras.</p>"
+  }
+];
+
+function showBlogModal(index) {
+  const modal = document.getElementById('blog-modal');
+  const body = document.getElementById('blog-modal-body');
+  const article = blogArticles[index];
+  
+  body.innerHTML = `
+    <h2 style="font-size:22px; margin-bottom:16px; color:var(--green-deep);">${article.title}</h2>
+    <div style="line-height:1.7; color:var(--text);">${article.content}</div>
+    <p style="margin-top:24px; font-size:13px; color:var(--text-light);">Este conteúdo faz parte do nosso material gratuito para apoiar famílias na introdução alimentar.</p>
+  `;
+  
+  modal.style.display = 'flex';
+}
+
+function closeBlogModal() {
+  const modal = document.getElementById('blog-modal');
+  if (modal) modal.style.display = 'none';
 }
 
 </script>

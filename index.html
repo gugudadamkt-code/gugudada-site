@@ -270,7 +270,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .logo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-decoration: none;
   }
   .logo-img {
@@ -285,8 +285,9 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     padding:12px 20px;
     min-height: 64px;
   }
+  .main-nav { flex: 1; display: flex; justify-content: center; }
   /* Logo now uses image only - legacy text styles removed */
-  .main-nav ul{ display:flex; gap:28px; }
+  .main-nav ul{ display:flex; gap:28px; justify-content: center; }
   .main-nav a{
     font-weight:600;
     font-size:15px;
@@ -321,13 +322,13 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     display:grid;
     grid-template-columns:1.05fr 0.95fr;
     gap: 24px 48px;
-    align-items:start;
+    align-items:center;
     position: relative;
     z-index: 2; /* hero content above particles (z:1) */
   }
   /* Desktop left column stacking: intro + actions under lead; visual spans beside */
-  .hero-intro { grid-column: 1; grid-row: 1; }
-  .hero-actions { grid-column: 1; grid-row: 2; }
+  .hero-intro { grid-column: 1; grid-row: 1; text-align: center; }
+  .hero-actions { grid-column: 1; grid-row: 2; text-align: center; }
   .hero-visual { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
   .hero img {
     max-width: 100%;
@@ -351,6 +352,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .hero h1{
     font-size:46px;
     margin-bottom:22px;
+    text-align: center;
   }
   .hero h1 .accent{ color:var(--peach); }
   .hero p.lead{
@@ -358,23 +360,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     color:var(--text);
     max-width:480px;
     margin-bottom:30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .mini-features{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:18px;
-    margin-bottom:34px;
-  }
-  .mini-feature{ display:flex; flex-direction:column; gap:10px; }
-  .mini-feature .icon-circle{
-    width:46px; height:46px;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    background:var(--green-soft);
-  }
-  .mini-feature .icon-circle svg{ width:22px; height:22px; }
-  .mini-feature p{ font-size:13.5px; font-weight:600; color:var(--green-deep); line-height:1.35; }
-
   .hero-visual{ position:relative; display:flex; justify-content:center; align-items:center; }
   .hero-visual .blob{
     position:absolute;
@@ -423,6 +412,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .section-head h2{ font-size:32px; }
 
   .features-strip{ background:var(--cream-soft); }
+  .features-strip img { max-width: min(1020px, 100%); width: 100%; height: auto; display: block; margin: 0 auto 24px; border-radius: 14px; }
   .features-grid{
     display:grid;
     grid-template-columns:repeat(5, 1fr);
@@ -453,10 +443,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .bg-blue{ background:#DCEAEA; }
   .icon-circle svg{ stroke:var(--green-deep); }
 
-  /* =================== SHOWCASE (checklist + galeria + preço) =================== */
+  /* =================== SHOWCASE (checklist + preço) =================== */
   .showcase-grid{
     display:grid;
-    grid-template-columns:1fr 0.85fr 1fr;
+    grid-template-columns:1fr 1fr;
     gap:26px;
     align-items:stretch;
   }
@@ -473,19 +463,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     font-size:15px; font-weight:600; color:var(--text);
   }
   .checklist-card li svg{ flex-shrink:0; margin-top:2px; width:19px; height:19px; }
-
-  .gallery-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .gallery-grid img{
-    width: 100%;
-    border-radius: var(--radius-sm);
-    object-fit: cover;
-    box-shadow: var(--shadow-card);
-    display: block;
-  }
 
   .price-card{
     background:var(--green-deep);
@@ -521,14 +498,27 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .price-card .btn{ width:100%; margin-bottom:6px; }
   .price-card .secure-note{ color:rgba(251,246,236,0.75); }
 
+  .price-extras { margin: 16px 0 2px; font-size: 13px; line-height: 1.35; }
+  .price-benefits { list-style: none; margin: 0 0 8px 0; padding: 0; }
+  .price-benefits li { padding: 1px 0; color: rgba(251,246,236,0.92); }
+  .mini-testimonial {
+    background: rgba(251,246,236,0.12);
+    border-radius: 6px;
+    padding: 7px 9px;
+    margin-top: 5px;
+    font-size: 11.5px;
+    line-height: 1.3;
+    font-style: italic;
+  }
+
   .payment-box {
     background: var(--white);
     border-radius: var(--radius-md);
-    padding: 8px 12px;
+    padding: 10px 16px;
     box-shadow: var(--shadow-card);
-    margin-top: 10px;
+    margin-top: 18px;
     text-align: center;
-    max-width: 200px;
+    max-width: 280px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -753,19 +743,18 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   /* =================== RESPONSIVO - MELHORADO PARA MOBILE 100% =================== */
   /* Tablet / large mobile */
   @media (max-width: 980px) {
-    .mini-features { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .features-grid { grid-template-columns: repeat(3, 1fr); }
     .showcase-grid { grid-template-columns: 1fr; gap: 22px; }
-    .gallery-grid { max-width: 380px; margin: 0 auto; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .faq-final-grid { grid-template-columns: 1fr; gap: 28px; }
     .hero-visual .cover-frame { width: 88%; max-width: 360px; }
     .hero-visual .blob { width: 300px; height: 300px; }
+    .features-strip img { max-width: 100%; }
   }
 
   /* Mobile principal (landscape + portrait) */
   @media (max-width: 760px) {
-    .site-header { background: rgba(251,246,236,0.98); }
+    .site-header { background: #FFFBF5; }
     .logo-img { height: 52px; }
 
     /* Ensure header flex places hamburger label on far right (after hiding .header-cta) */
@@ -778,7 +767,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
        Uses .main-nav.open for reliable show/hide. aria + toggle via JS. */
     .main-nav {
       position: fixed;
-      top: 64px;
+      top: 68px;
       left: 0;
       right: 0;
       max-height: 0;
@@ -887,10 +876,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .eyebrow { font-size: 11.5px; padding: 7px 14px; margin-bottom: 16px; }
     
 
-    .mini-feature .icon-circle { width: 38px; height: 38px; }
-    .mini-feature .icon-circle svg { width: 18px; height: 18px; }
-    .mini-feature p { font-size: 12.5px; }
-    
     .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .feature-card { padding: 22px 16px; }
     
@@ -908,6 +893,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   }
     .price-now { font-size: 44px; }
     .price-card { padding: 32px 26px; }
+    .features-strip img { max-width: 100%; }
   }
 
   /* Small mobile (iPhone etc) */
@@ -916,19 +902,28 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .hero h1 { font-size: 26px; }
 
     .features-grid { grid-template-columns: 1fr; }
-    .gallery-grid { max-width: 100%; }
+
     .price-now { font-size: 38px; }
     .checklist-card, .price-card { padding: 28px 22px; }
+    .price-extras { font-size: 12px; }
+    .mini-testimonial { font-size: 10.5px; padding: 6px 8px; }
     .hero-visual .cover-frame { width: 82%; max-width: 320px; border-width: 4px; padding: 4px; margin: 4px auto; }
     .hero-visual .cover-frame img { max-height: 380px; }
     .hero-visual .blob { display: none; }
     .eyebrow { font-size: 10.5px; padding: 6px 12px; letter-spacing: .2px; }
+    .payment-box { max-width: 100%; padding: 8px 12px; margin-top: 12px; }
   }
 
   /* Very small screens */
   @media (max-width: 360px) {
     .hero h1 { font-size: 23px; }
     .btn { padding: 14px 22px; font-size: 14.5px; }
+    .container { padding: 0 12px; }
+    .checklist-card, .price-card { padding: 22px 16px; }
+    .feature-card { padding: 18px 12px; }
+    .section-head { margin-bottom: 36px; }
+    .mobile-sticky-cta { padding: 8px 10px; }
+    .mobile-sticky-cta a { font-size: 14px; }
   }
 
   /* Sticky CTA bar para MOBILE (conversão alta) */
@@ -940,7 +935,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     right: 0;
     background: linear-gradient(135deg, var(--peach), var(--peach-dark));
     color: white;
-    padding: 12px 16px;
+    padding: 10px 12px;
     box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
     z-index: 999;
     text-align: center;
@@ -1034,7 +1029,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <div class="hero-actions">
+      <div class="hero-actions" style="text-align:center;">
         <!-- LINK A SUBSTITUIR: link de checkout -->
         <a href="#" class="btn btn-primary">QUERO MEU EBOOK AGORA!</a>
         <p class="secure-note">🔒 Compra 100% segura</p>
@@ -1048,6 +1043,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
       <div class="section-head">
         <span class="bowl-dots"><span></span><span></span><span></span></span>
         <h2>Tudo o que você precisa em um só lugar!</h2>
+        <img src="img/paginas.png" alt="Ilustração de introdução alimentar" style="margin: 0 auto 24px;">
       </div>
 
       <div class="features-grid">
@@ -1075,7 +1071,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- ============ SHOWCASE: checklist + galeria + preço ============ -->
+  <!-- ============ SHOWCASE: checklist + preço ============ -->
   <section id="sobre">
     <div class="container">
       <div class="showcase-grid">
@@ -1090,18 +1086,11 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Guia de congelamento e armazenamento</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dúvidas frequentes respondidas</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> E muito mais!</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Texturas e consistências ideais por fase</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Como identificar e lidar com alergias</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Estratégias contra recusa alimentar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lista de compras + porções por idade</li>
           </ul>
-        </div>
-
-        <!-- 
-          IMAGENS IMPORTANTES PARA SUBSTITUIR:
-          Coloque 4 fotos reais de receitas/papinhas do seu eBook (quadradas 300x300 ou 400x400).
-          Use fotos apetitosas, bem iluminadas, de preferência com o bebê ou pratos prontos.
-          Isso aumenta MUITO a conversão.
-        -->
-        <div class="gallery-grid">
-          <img src="https://placehold.co/300x300/FBDCC9/2F4A32?text=SUBSTITUA+1" alt="Exemplo de papinha - substitua por foto real" width="300" height="300" loading="lazy" style="width:100%; border-radius:12px;">
-          <img src="https://placehold.co/300x300/DCE8D6/2F4A32?text=SUBSTITUA+2" alt="Exemplo de papinha - substitua por foto real" width="300" height="300" loading="lazy" style="width:100%; border-radius:12px;">
         </div>
 
         <div class="price-card">
@@ -1114,10 +1103,22 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
           <p class="secure-note">🔒 Pagamento 100% seguro</p>
           <p class="secure-note">✉️ Você recebe o acesso na hora!</p>
 
-          <!-- Pagamento -->
-          <div class="payment-box">
-            <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 160px; width:100%; height:auto; display:block; margin: 0 auto;">
+          <div class="price-extras">
+            <ul class="price-benefits">
+              <li>✓ Acesso vitalício + atualizações grátis</li>
+              <li>✓ Bônus: cardápios imprimíveis + lista de compras</li>
+              <li>✓ Suporte por email por 30 dias</li>
+            </ul>
+            <div class="mini-testimonial">“Salvou minha rotina com o bebê de 7 meses!” — Fernanda L.</div>
+            <div class="mini-testimonial">“Melhor investimento para a saúde do meu filho.” — Roberta S.</div>
           </div>
+
+          <!-- Pagamento (larger, placed lower in card) -->
+          <div class="payment-box" style="margin-top:12px;">
+            <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 100%; width:100%; height:auto; display:block; margin: 0 auto;">
+          </div>
+
+          <p style="font-size:10px; opacity:0.7; margin-top:8px; text-align:center;">Baseado em diretrizes da SBP, OMS, Ministério da Saúde e AAP.</p>
         </div>
 
       </div>
@@ -1213,48 +1214,50 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
         <p style="text-align:center; max-width:600px; margin: 0 auto 30px;">Dicas práticas, evidências científicas e orientações para uma introdução alimentar tranquila e saudável.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px;">
         <!-- Artigo 1 -->
-        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(0)">
-          <h3 style="font-size:18px; margin-bottom:8px;">Os Primeiros Passos na Introdução Alimentar</h3>
-          <p style="font-size:14px; color:var(--text-light);">Quando começar, sinais de prontidão e o que evitar nos primeiros meses.</p>
-          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
-        </div>
+        <a href="artigo-1.html" style="text-decoration:none; color:inherit;">
+          <div class="testimonial-card" style="cursor:pointer;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Os Primeiros Passos na Introdução Alimentar</h3>
+            <p style="font-size:14px; color:var(--text-light);">Quando começar, sinais de prontidão e o que evitar nos primeiros meses.</p>
+            <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+          </div>
+        </a>
         <!-- Artigo 2 -->
-        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(1)">
-          <h3 style="font-size:18px; margin-bottom:8px;">Ferro: O Nutriente Mais Importante para Bebês</h3>
-          <p style="font-size:14px; color:var(--text-light);">Alimentos ricos em ferro, combinações que aumentam absorção e prevenção da anemia.</p>
-          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
-        </div>
+        <a href="artigo-2.html" style="text-decoration:none; color:inherit;">
+          <div class="testimonial-card" style="cursor:pointer;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Ferro: O Nutriente Mais Importante para Bebês</h3>
+            <p style="font-size:14px; color:var(--text-light);">Alimentos ricos em ferro, combinações que aumentam absorção e prevenção da anemia.</p>
+            <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+          </div>
+        </a>
         <!-- Artigo 3 -->
-        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(2)">
-          <h3 style="font-size:18px; margin-bottom:8px;">Texturas por Idade: Guia Sem Engasgos</h3>
-          <p style="font-size:14px; color:var(--text-light);">Do purê aos pedaços: como progredir as texturas de forma segura e divertida.</p>
-          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
-        </div>
+        <a href="artigo-3.html" style="text-decoration:none; color:inherit;">
+          <div class="testimonial-card" style="cursor:pointer;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Texturas por Idade: Guia Sem Engasgos</h3>
+            <p style="font-size:14px; color:var(--text-light);">Do purê aos pedaços: como progredir as texturas de forma segura e divertida.</p>
+            <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+          </div>
+        </a>
         <!-- Artigo 4 -->
-        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(3)">
-          <h3 style="font-size:18px; margin-bottom:8px;">Recusa Alimentar: O Que Fazer?</h3>
-          <p style="font-size:14px; color:var(--text-light);">Estratégias comprovadas para lidar com o bebê que rejeita novos alimentos.</p>
-          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
-        </div>
+        <a href="artigo-4.html" style="text-decoration:none; color:inherit;">
+          <div class="testimonial-card" style="cursor:pointer;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Recusa Alimentar: O Que Fazer?</h3>
+            <p style="font-size:14px; color:var(--text-light);">Estratégias comprovadas para lidar com o bebê que rejeita novos alimentos.</p>
+            <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+          </div>
+        </a>
         <!-- Artigo 5 -->
-        <div class="testimonial-card" style="cursor:pointer;" onclick="showBlogModal(4)">
-          <h3 style="font-size:18px; margin-bottom:8px;">Alergias Alimentares: Introdução Segura</h3>
-          <p style="font-size:14px; color:var(--text-light);">Como introduzir alérgenos comuns e sinais de alerta para os pais.</p>
-          <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
-        </div>
+        <a href="artigo-5.html" style="text-decoration:none; color:inherit;">
+          <div class="testimonial-card" style="cursor:pointer;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Alergias Alimentares: Introdução Segura</h3>
+            <p style="font-size:14px; color:var(--text-light);">Como introduzir alérgenos comuns e sinais de alerta para os pais.</p>
+            <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- Blog Modals -->
-  <div id="blog-modal" class="modal" onclick="closeBlogModal()">
-    <div class="modal-content" style="background:#fff; padding:30px; max-width:700px; border-radius:20px; max-height:85vh; overflow:auto;" onclick="event.stopImmediatePropagation()">
-      <span class="close" onclick="closeBlogModal()">&times;</span>
-      <div id="blog-modal-body"></div>
-    </div>
-  </div>
 
   <!-- ============ FAQ + CTA FINAL ============ -->
   <section id="faq">
@@ -1306,7 +1309,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
       <div class="contact-side">
         <h3 class="side-title">Dúvidas? Fale conosco!</h3>
-        <form id="fale-conosco" class="contact-form" onsubmit="handleContactForm(event)">
+        <form id="fale-conosco" class="contact-form" action="mailto:gugudada.mkt@gmail.com" method="post" enctype="text/plain">
           <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -1327,63 +1330,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- ============ REFERÊNCIAS ============ -->
-  <section id="referencias" style="padding: 40px 0; background: var(--cream-soft);">
-    <div class="container">
-      <div class="section-head">
-        <span class="bowl-dots"><span></span><span></span><span></span></span>
-        <h2>Referências e Bases Científicas</h2>
-        <p style="max-width: 620px; margin: 0 auto;">O conteúdo do nosso eBook é fundamentado nas principais diretrizes e estudos reconhecidos por especialistas em nutrição infantil no Brasil e no mundo:</p>
-      </div>
-
-      <div style="max-width: 700px; margin: 30px auto; display: grid; gap: 16px;">
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">📘</span>
-          <div>
-            <strong>Sociedade Brasileira de Pediatria (SBP)</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Manual de Orientação para a Alimentação Complementar</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">🇧🇷</span>
-          <div>
-            <strong>Ministério da Saúde – SUS</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Dez Passos para uma Alimentação Saudável para Crianças</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">🌍</span>
-          <div>
-            <strong>Organização Mundial da Saúde (OMS)</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Diretrizes de Alimentação Complementar</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">👶</span>
-          <div>
-            <strong>Academia Americana de Pediatria (AAP)</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Recomendações de Introdução de Alimentos</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">📖</span>
-          <div>
-            <strong>Guia Alimentar para a População Brasileira</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Ministério da Saúde</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:12px; align-items:flex-start; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow-card);">
-          <span style="font-size:22px;">🔬</span>
-          <div>
-            <strong>Estudos sobre alergias alimentares e diversificação alimentar (2023-2026)</strong><br>
-            <span style="font-size:13px; color:var(--text-light);">Evidências atualizadas sobre introdução precoce de alérgenos</span>
-          </div>
-        </div>
-      </div>
-      <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:20px;">Todas as receitas e orientações foram elaboradas com base nessas fontes confiáveis.</p>
-    </div>
-  </section>
-
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -1396,8 +1342,8 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     <div class="footer-inner">
       <p class="footer-copy">© 2026 Gugû Dadá. Todos os direitos reservados. • <a href="mailto:gugudada.mkt@gmail.com" style="color:inherit;">gugudada.mkt@gmail.com</a></p>
       <div class="footer-links">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
+        <a href="#" onclick="showPolicyModal('privacy'); return false;">Política de Privacidade</a>
+        <a href="#" onclick="showPolicyModal('terms'); return false;">Termos de Uso</a>
       </div>
     </div>
   </div>
@@ -1407,6 +1353,14 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 <!-- LINK A SUBSTITUIR: troque o href por seu link de checkout em TODOS os lugares -->
 <div class="mobile-sticky-cta">
   <a href="#">🔥 QUERO MEU EBOOK AGORA por R$ 17,90</a>
+</div>
+
+<!-- Policy / Terms Modals -->
+<div id="policy-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center;">
+  <div style="background:#fff; max-width:520px; width:92%; border-radius:20px; padding:32px; position:relative; max-height:80vh; overflow:auto;">
+    <button onclick="closePolicyModal()" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:28px; cursor:pointer;">&times;</button>
+    <div id="policy-content"></div>
+  </div>
 </div>
 
 <!-- Lightbox Modal for Capa (only) -->
@@ -1502,27 +1456,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   }
 })();
 
-// Contact form handler (fake for now - replace with real integration)
-function handleContactForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-send');
-  const original = btn.textContent;
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    btn.textContent = 'Mensagem enviada! ✓';
-    btn.style.background = 'var(--green)';
-    e.target.reset();
-
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 1800);
-  }, 700);
-}
-
 // Lightbox for capa image only
 const capaImg = document.getElementById('capa-img');
 const capaModal = document.getElementById('capa-modal');
@@ -1552,47 +1485,69 @@ function closeCapaModal() {
   if (modal) modal.style.display = 'none';
 }
 
-// Blog articles data
-const blogArticles = [
-  {
-    title: "Os Primeiros Passos na Introdução Alimentar",
-    content: "<p>A introdução alimentar começa idealmente aos 6 meses. Fique atento aos sinais de prontidão: o bebê consegue se sentar com apoio, mostra interesse pela comida e perde o reflexo de protrusão da língua.</p><p>Comece com alimentos de sabor suave e textura pastosa. Ofereça um alimento novo por vez e observe reações por 3-5 dias.</p><p>Evite mel antes de 1 ano e sal, açúcar e temperos industrializados.</p>"
-  },
-  {
-    title: "Ferro: O Nutriente Mais Importante para Bebês",
-    content: "<p>A partir dos 6 meses as reservas de ferro do bebê diminuem. Priorize carnes, feijões, lentilhas e vegetais folhosos escuros.</p><p>Combine com vitamina C (frutas cítricas, tomate) para melhorar a absorção. Evite chá e leite no mesmo horário das refeições ricas em ferro.</p><p>Nosso ebook traz receitas específicas ricas em ferro para cada fase.</p>"
-  },
-  {
-    title: "Texturas por Idade: Guia Sem Engasgos",
-    content: "<p>6-8 meses: purês e papinhas lisas. 9-12 meses: alimentos amassados com pedacinhos. Após 12 meses: alimentos em pedaços do tamanho do punho fechado do bebê.</p><p>Sempre supervise as refeições. Ofereça alimentos em formato de bastão para que o bebê segure e morda com segurança.</p><p>Pratique a técnica de engasgo seguro com os cuidadores.</p>"
-  },
-  {
-    title: "Recusa Alimentar: O Que Fazer?",
-    content: "<p>É normal o bebê rejeitar novos sabores nas primeiras 10-15 ofertas. Mantenha a calma e continue oferecendo sem pressão.</p><p>Faça das refeições um momento divertido e sem distrações (TV, tablet). Deixe o bebê tocar e explorar o alimento.</p><p>Se a recusa persistir, consulte um pediatra ou nutricionista infantil.</p>"
-  },
-  {
-    title: "Alergias Alimentares: Introdução Segura",
-    content: "<p>Introduza alérgenos comuns (ovo, amendoim, leite, peixe, trigo) a partir dos 6 meses, um de cada vez, em pequena quantidade.</p><p>Observe por 2 horas após a oferta. Sinais de alergia: inchaço, urticária, vômito, dificuldade para respirar.</p><p>Em caso de reação, procure atendimento médico imediatamente. O ebook traz orientações detalhadas e receitas seguras.</p>"
-  }
-];
+// Fade-in animations for sections on scroll (no conflicts)
+(function() {
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-function showBlogModal(index) {
-  const modal = document.getElementById('blog-modal');
-  const body = document.getElementById('blog-modal-body');
-  const article = blogArticles[index];
-  
-  body.innerHTML = `
-    <h2 style="font-size:22px; margin-bottom:16px; color:var(--green-deep);">${article.title}</h2>
-    <div style="line-height:1.7; color:var(--text);">${article.content}</div>
-    <p style="margin-top:24px; font-size:13px; color:var(--text-light);">Este conteúdo faz parte do nosso material gratuito para apoiar famílias na introdução alimentar.</p>
-  `;
-  
+  sections.forEach(section => {
+    section.style.opacity = '0.2';
+    section.style.transform = 'translateY(20px)';
+    observer.observe(section);
+  });
+
+  // Initial hero fade
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.style.transition = 'opacity 0.8s ease';
+    hero.style.opacity = '1';
+  }
+})();
+
+// Loop animation on CTA in sobre section (pulse)
+(function() {
+  const sobreCta = document.querySelector('#sobre .btn-primary');
+  if (sobreCta) {
+    sobreCta.style.animation = 'pulseCta 2s infinite ease-in-out';
+  }
+})();
+
+// Add keyframes for pulse if not present
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes pulseCta {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(255, 127, 90, 0.25); }
+    50% { transform: scale(1.05); box-shadow: 0 12px 28px rgba(255, 127, 90, 0.35); }
+  }
+`;
+document.head.appendChild(style);
+
+// Policy modal functions
+function showPolicyModal(type) {
+  const modal = document.getElementById('policy-modal');
+  const content = document.getElementById('policy-content');
+  let html = '';
+  if (type === 'privacy') {
+    html = `<h2 style="font-size:22px; margin-bottom:16px; color:#2F4A32;">Política de Privacidade</h2>
+    <p style="font-size:14.5px; line-height:1.6;">Este ebook é oferecido por Gugû Dadá. Coletamos apenas informações necessárias para processar sua compra e enviar o acesso (nome, email). Não compartilhamos seus dados com terceiros. Os pagamentos são processados por plataformas seguras como Kiwify. Você pode solicitar a exclusão dos seus dados a qualquer momento enviando email para gugudada.mkt@gmail.com. Garantimos transparência e segurança em todas as etapas.</p>`;
+  } else {
+    html = `<h2 style="font-size:22px; margin-bottom:16px; color:#2F4A32;">Termos de Uso</h2>
+    <p style="font-size:14.5px; line-height:1.6;">Ao adquirir o ebook Gugû Dadá, você concorda em usar o material exclusivamente para fins pessoais. Não é permitido reproduzir, distribuir ou vender o conteúdo sem autorização. O ebook fornece orientações gerais baseadas em referências científicas, mas não substitui aconselhamento médico ou nutricional individualizado. Recomendamos sempre consultar profissionais de saúde. Em caso de dúvida, entre em contato conosco.</p>`;
+  }
+  content.innerHTML = html;
   modal.style.display = 'flex';
 }
-
-function closeBlogModal() {
-  const modal = document.getElementById('blog-modal');
-  if (modal) modal.style.display = 'none';
+function closePolicyModal() {
+  document.getElementById('policy-modal').style.display = 'none';
 }
 
 </script>
