@@ -55,12 +55,12 @@
   // Evento recomendado para landing de produto (ajuda em relatórios e remarketing)
   gtag('event', 'view_item', {
     currency: 'BRL',
-    value: 17.90,
+    value: 19.90,
     items: [{
       item_id: 'gugu-dada-ebook',
       item_name: 'Gugû Dadá - Guia Completo de Introdução Alimentar',
       item_category: 'eBooks / Introdução Alimentar',
-      price: 17.90
+      price: 19.90
     }]
   });
 </script>
@@ -81,7 +81,7 @@ fbq('track', 'ViewContent', {
   content_name: 'Gugû Dadá | Guia Completo de Introdução Alimentar',
   content_type: 'product',
   content_ids: ['ebook-introducao-alimentar'],
-  value: 17.90,
+  value: 19.90,
   currency: 'BRL'
 });
 </script>
@@ -109,7 +109,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   "offers": {
     "@type": "Offer",
     "priceCurrency": "BRL",
-    "price": "17.90",
+    "price": "19.90",
     "availability": "https://schema.org/InStock",
     "url": "https://www.seudominio.com.br/"
   }
@@ -129,7 +129,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   pointer-events: none;
   opacity: 0; /* hide until ready to prevent flash/stuck on reload */
   transition: opacity 120ms ease;
-  --p-opacity: 0.22;
+  --p-opacity: 0.25;
   --travel: 420px;
 }
 
@@ -156,7 +156,8 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 /* ANIMAÇÃO (uses CSS vars for responsive travel/opacity) */
 @keyframes float {
   0% { transform: translateY(0); opacity: 0; }
-  20% { opacity: var(--p-opacity); }
+  15% { opacity: var(--p-opacity); }
+  82% { opacity: var(--p-opacity); }
   100% { transform: translateY(var(--travel)); opacity: 0; }
 }
   /* =================== TOKENS =================== */
@@ -317,6 +318,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     padding-top:30px; 
     padding-bottom:60px; 
     position: relative; /* contains particles absolutely */
+    overflow: hidden; /* ensure particles (and any overflow) stay contained within hero */
   }
   .hero .container{
     display:grid;
@@ -411,9 +413,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .section-head .bowl-dots{ margin-bottom:14px; justify-content:center; display:flex; }
   .section-head h2{ font-size:32px; }
 
-  .features-strip{ background:var(--cream-soft); }
-  .features-strip img { max-width: min(1020px, 100%); width: 100%; height: auto; display: block; margin: 0 auto 24px; border-radius: 14px; }
+  .features-strip{ background:var(--cream-soft);  }
+  .features-strip img { max-width: min(680px, 90%); width: 100%; height: auto; display: block; margin: 0 auto 24px; border-radius: 14px; }
   .features-grid{
+	margin-top: -70px;
     display:grid;
     grid-template-columns:repeat(5, 1fr);
     gap:22px;
@@ -473,6 +476,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     display:flex;
     flex-direction:column;
     justify-content:center;
+    align-items:center;
   }
   .price-card h3{
     color:var(--white);
@@ -488,19 +492,22 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .price-label{ font-size:14px; opacity:.85; margin-bottom:4px; }
   .price-now{
     font-family:'Fredoka', sans-serif;
-    font-size:50px;
+    font-size:62px;
     font-weight:700;
     color:var(--yellow);
     margin-bottom:24px;
     line-height:1;
   }
-  .price-now sup{ font-size:24px; top:-1.1em; }
+  .price-now sup{ font-size:28px; top:-1.05em; }
   .price-card .btn{ width:100%; margin-bottom:6px; }
-  .price-card .secure-note{ color:rgba(251,246,236,0.75); }
+  .price-card .secure-note{ color:rgba(251,246,236,0.75); text-align:center; }
 
-  .price-extras { margin: 16px 0 2px; font-size: 13px; line-height: 1.35; }
-  .price-benefits { list-style: none; margin: 0 0 8px 0; padding: 0; }
-  .price-benefits li { padding: 1px 0; color: rgba(251,246,236,0.92); }
+  .price-extras { margin: 16px 0 2px; font-size: 13px; line-height: 1.35; text-align:center; }
+  .price-benefits { list-style: none; margin: 0 0 8px 0; padding: 0; text-align:center; }
+  .price-benefits li { padding: 2px 0; color: rgba(251,246,236,0.92); text-align:center; }
+
+  /* Center text in price-benefits (checklist-style), secure-note lines, and related as specified */
+  .price-card h3, .price-card .price-old, .price-card .price-label { text-align: center; }
   .mini-testimonial {
     background: rgba(251,246,236,0.12);
     border-radius: 6px;
@@ -516,7 +523,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     border-radius: var(--radius-md);
     padding: 10px 16px;
     box-shadow: var(--shadow-card);
-    margin-top: 18px;
+    margin-top: 28px;
     text-align: center;
     max-width: 280px;
     margin-left: auto;
@@ -591,6 +598,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     align-items:center;
     justify-content:space-between;
     gap:30px;
+    border: 1px solid rgba(47,74,50,0.18); /* borda leve e visível em volta do box */
   }
   .guarantee-left{ display:flex; align-items:center; gap:22px; }
   .guarantee-left .shield-icon{
@@ -604,7 +612,8 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     width:96px; height:96px;
     border-radius:50%;
     background:var(--yellow);
-    border:4px dashed var(--white);
+    border: 3px solid rgba(47,74,50,0.25);
+    box-shadow: 0 0 0 6px rgba(251,246,236,0.45);
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     text-align:center;
     flex-shrink:0;
@@ -719,6 +728,33 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     text-align: center;
     margin-top: 10px;
   }
+  .form-hint {
+    font-size: 11.5px;
+    color: var(--text-light);
+    text-align: center;
+    margin: 4px 0 8px;
+    font-style: italic;
+  }
+  .btn-send:disabled {
+    opacity: 0.72;
+    cursor: wait;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .form-success {
+    background: #e8f0e9;
+    border: 1px solid #6E9A6B;
+    color: #2F4A32;
+    padding: 13px 14px;
+    border-radius: 12px;
+    margin: 10px 0 4px;
+    font-size: 13.5px;
+    text-align: center;
+    line-height: 1.45;
+  }
+  .form-success p {
+    margin: 3px 0;
+  }
 
   /* =================== FOOTER =================== */
   footer{
@@ -749,7 +785,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .faq-final-grid { grid-template-columns: 1fr; gap: 28px; }
     .hero-visual .cover-frame { width: 88%; max-width: 360px; }
     .hero-visual .blob { width: 300px; height: 300px; }
-    .features-strip img { max-width: 100%; }
+    .features-strip img { max-width: min(620px, 92%); }
   }
 
   /* Mobile principal (landscape + portrait) */
@@ -891,9 +927,9 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     margin: 0 auto;
     display: block;
   }
-    .price-now { font-size: 44px; }
+    .price-now { font-size: 52px; }
     .price-card { padding: 32px 26px; }
-    .features-strip img { max-width: 100%; }
+    .features-strip img { max-width: min(620px, 92%); }
   }
 
   /* Small mobile (iPhone etc) */
@@ -903,7 +939,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
     .features-grid { grid-template-columns: 1fr; }
 
-    .price-now { font-size: 38px; }
+    .price-now { font-size: 46px; }
     .checklist-card, .price-card { padding: 28px 22px; }
     .price-extras { font-size: 12px; }
     .mini-testimonial { font-size: 10.5px; padding: 6px 8px; }
@@ -911,7 +947,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .hero-visual .cover-frame img { max-height: 380px; }
     .hero-visual .blob { display: none; }
     .eyebrow { font-size: 10.5px; padding: 6px 12px; letter-spacing: .2px; }
-    .payment-box { max-width: 100%; padding: 8px 12px; margin-top: 12px; }
+    .payment-box { max-width: 100%; padding: 8px 12px; margin-top: 18px; }
   }
 
   /* Very small screens */
@@ -960,10 +996,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .particles {
       height: 210px;
       --travel: 210px;
-      --p-opacity: 0.10; /* lower/subtle opacity */
+      --p-opacity: 0.32; /* raised for better mobile perceptibility (not distracting) */
     }
     .particles span {
-      font-size: 11px; /* smaller size */
+      font-size: 16px; /* increased for mobile visibility (15-18px range) */
     }
   }
 </style>
@@ -973,7 +1009,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="topo">
   <div class="header-inner">
-    <a href="#topo" class="logo">
+    <a href="#" class="logo">
       <img src="img/Logo.png" alt="Gugû Dadá" class="logo-img">
     </a>
 
@@ -982,7 +1018,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
     <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
       <ul>
-        <li><a href="#topo">Início</a></li>
+        <li><a href="#">Início</a></li>
         <li><a href="#conteudo">Sobre o eBook</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -997,6 +1033,65 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     </div>
   </div>
 </header>
+
+<script>
+(function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const label = document.querySelector('.menu-toggle-label');
+  if (!menuToggle || !nav || !label) return;
+
+  function setOpen(isOpen) {
+    menuToggle.checked = isOpen;
+    if (isOpen) {
+      nav.classList.add('open');
+    } else {
+      nav.classList.remove('open');
+    }
+    label.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  setOpen(false);
+
+  menuToggle.addEventListener('change', () => {
+    setOpen(menuToggle.checked);
+  });
+
+  label.addEventListener('click', function() {
+    requestAnimationFrame(() => {
+      setOpen(menuToggle.checked);
+    });
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      setOpen(false);
+      // Ensure "Início" and top links always scroll to very top on index
+      const href = link.getAttribute('href');
+      if (href === '#' || href === '#topo') {
+        // Allow default for most cases, but force top scroll if needed
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 10);
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') &&
+        !nav.contains(e.target) &&
+        !label.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      setOpen(false);
+    }
+  });
+})();
+</script>
 
 <main>
 
@@ -1043,7 +1138,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
       <div class="section-head">
         <span class="bowl-dots"><span></span><span></span><span></span></span>
         <h2>Tudo o que você precisa em um só lugar!</h2>
-        <img src="img/paginas.png" alt="Ilustração de introdução alimentar" style="margin: 0 auto 24px;">
+        <img src="img/paginas.png" alt="Ilustração de introdução alimentar" style="margin: 0 auto 24px; max-width: min(680px, 90%);">
       </div>
 
       <div class="features-grid">
@@ -1085,40 +1180,36 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cardápios semanais de 6 a 24 meses</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Guia de congelamento e armazenamento</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dúvidas frequentes respondidas</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> E muito mais!</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Texturas e consistências ideais por fase</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Como identificar e lidar com alergias</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Estratégias contra recusa alimentar</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lista de compras + porções por idade</li>
-          </ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Estratégias contra recusa alimentar</li>          
+		  </ul>
+		  <p style="font-size:12px; opacity:0.7; margin-top:8px; text-align:center; color:black">Baseado em diretrizes da SBP, OMS, Ministério da Saúde e AAP.</p>
         </div>
 
         <div class="price-card">
           <h3>Acesso imediato e para sempre! ❤</h3>
-          <p class="price-old">De R$ 67,90</p>
+          <p class="price-old">De R$ 69,90</p>
           <p class="price-label">por apenas</p>
-          <p class="price-now"><sup>R$</sup>17,90</p>
+          <p class="price-now"><sup>R$</sup>19,90</p>
           <!-- LINK A SUBSTITUIR: link de checkout -->
           <a href="#" class="btn btn-primary btn-block">QUERO MEU EBOOK AGORA!</a>
-          <p class="secure-note">🔒 Pagamento 100% seguro</p>
-          <p class="secure-note">✉️ Você recebe o acesso na hora!</p>
+          <p class="secure-note" style="text-align:center;">✉️ Você recebe o acesso na hora!</p>
 
           <div class="price-extras">
             <ul class="price-benefits">
-              <li>✓ Acesso vitalício + atualizações grátis</li>
-              <li>✓ Bônus: cardápios imprimíveis + lista de compras</li>
+              <li>✓ Pagamento 100% seguro</li>
+              <li>✓ Acesso Vitalício</li>
               <li>✓ Suporte por email por 30 dias</li>
             </ul>
-            <div class="mini-testimonial">“Salvou minha rotina com o bebê de 7 meses!” — Fernanda L.</div>
-            <div class="mini-testimonial">“Melhor investimento para a saúde do meu filho.” — Roberta S.</div>
           </div>
 
           <!-- Pagamento (larger, placed lower in card) -->
-          <div class="payment-box" style="margin-top:12px;">
+          <div class="payment-box" style="margin-top:24px;">
             <img src="img/pagamento.webp" alt="Métodos de pagamento aceitos (PIX, cartões)" style="max-width: 100%; width:100%; height:auto; display:block; margin: 0 auto;">
           </div>
 
-          <p style="font-size:10px; opacity:0.7; margin-top:8px; text-align:center;">Baseado em diretrizes da SBP, OMS, Ministério da Saúde e AAP.</p>
+
         </div>
 
       </div>
@@ -1309,7 +1400,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
       <div class="contact-side">
         <h3 class="side-title">Dúvidas? Fale conosco!</h3>
-        <form id="fale-conosco" class="contact-form" action="mailto:gugudada.mkt@gmail.com" method="post" enctype="text/plain">
+        <form id="fale-conosco" class="contact-form">
           <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -1322,8 +1413,13 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <label for="mensagem">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
           </div>
+          <p class="form-hint">Será aberto seu app de email com os campos preenchidos.</p>
           <button type="submit" class="btn-send">Enviar mensagem</button>
         </form>
+        <div id="form-success" class="form-success" style="display:none;">
+          <p><strong>✅ Pronto!</strong> Seu app de email foi aberto com a mensagem pré-preenchida.</p>
+          <p style="margin:6px 0 0; font-size:12px;">Se não abriu, copie os dados e envie manualmente para <a href="mailto:gugudada.mkt@gmail.com" style="color:inherit; text-decoration:underline;">gugudada.mkt@gmail.com</a>.</p>
+        </div>
         <p class="form-note">Respondemos em até 24h úteis.</p>
       </div>
 
@@ -1352,7 +1448,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 <!-- Barra de compra fixa (só aparece no mobile via CSS) - ótima para conversão -->
 <!-- LINK A SUBSTITUIR: troque o href por seu link de checkout em TODOS os lugares -->
 <div class="mobile-sticky-cta">
-  <a href="#">🔥 QUERO MEU EBOOK AGORA por R$ 17,90</a>
+  <a href="#">🔥 QUERO MEU EBOOK AGORA por R$ 19,90</a>
 </div>
 
 <!-- Policy / Terms Modals -->
@@ -1372,80 +1468,24 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 </div>
 
 <script>
-// ROBUST MOBILE MENU: JS toggle + 'open' class + full ARIA (fixes checkbox ~ selector failures).
-// Logic: label click toggles native checkbox -> 'change' updates class+aria.
-// All closes (link/out/esc) call setOpen(false) which syncs checked + class + aria.
-// Tested mentally: open/close cycles, outside clicks, esc, link nav, no race conditions.
-(function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const nav = document.querySelector('.main-nav');
-  const label = document.querySelector('.menu-toggle-label');
-  if (!menuToggle || !nav || !label) return;
-
-  function setOpen(isOpen) {
-    menuToggle.checked = isOpen;
-    if (isOpen) {
-      nav.classList.add('open');
-    } else {
-      nav.classList.remove('open');
-    }
-    label.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-
-  // Initial state
-  setOpen(false);
-
-  // User toggle via checkbox (label click triggers this reliably)
-  menuToggle.addEventListener('change', () => {
-    setOpen(menuToggle.checked);
-  });
-
-  // Extra direct click on label for ultra reliability (ensures class even if timing)
-  label.addEventListener('click', function(e) {
-    // Native for= will have toggled checked by the time handler runs in most browsers.
-    // Use rAF + explicit to guarantee sync.
-    requestAnimationFrame(() => {
-      setOpen(menuToggle.checked);
-    });
-  });
-
-  // Fecha ao clicar link da nav (close immediately)
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      setOpen(false);
-    });
-  });
-
-  // Fecha ao clicar fora
-  document.addEventListener('click', (e) => {
-    if (nav.classList.contains('open') &&
-        !nav.contains(e.target) &&
-        !label.contains(e.target)) {
-      setOpen(false);
-    }
-  });
-
-  // ESC fecha
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      setOpen(false);
-    }
-  });
-})();
-
 // Particles: force clean start after load (initial opacity:0 + .ready class).
 // Prevents "stuck" flash between header/hero on reload. Animation starts only after paint.
+// IMPORTANT: clear inline opacity so keyframes can use var(--p-opacity) for mobile/desktop visibility.
 (function() {
   const particles = document.querySelector('.particles');
   if (!particles) return;
 
   // Use DOMContentLoaded + tiny timeout to guarantee styles applied, no initial visible opacity
   const startParticles = () => {
-    // Ensure spans are at 0 before kicking animation
+    // Set temp 0 (css already does), then clear inline after ready so animation fully controls opacity via --p-opacity var
     particles.querySelectorAll('span').forEach(s => { s.style.opacity = '0'; });
     // Trigger the ready state which fades container in + starts keyframes from 0%
     requestAnimationFrame(() => {
       particles.classList.add('ready');
+      // Clear inline opacity forcing so CSS animation keyframes apply the var(--p-opacity)
+      requestAnimationFrame(() => {
+        particles.querySelectorAll('span').forEach(s => { s.style.opacity = ''; });
+      });
     });
   };
 
@@ -1549,6 +1589,82 @@ function showPolicyModal(type) {
 function closePolicyModal() {
   document.getElementById('policy-modal').style.display = 'none';
 }
+
+// Robust contact form handler for static site (mailto with graceful UX + loading)
+// Replaces unreliable native mailto form submission.
+(function() {
+  const form = document.getElementById('fale-conosco');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nomeEl = document.getElementById('nome');
+    const emailEl = document.getElementById('email');
+    const msgEl = document.getElementById('mensagem');
+    const btn = form.querySelector('.btn-send');
+    const success = document.getElementById('form-success');
+    if (success) success.style.display = 'none';
+    if (!nomeEl || !emailEl || !msgEl || !btn) return;
+
+    const nome = nomeEl.value.trim();
+    const email = emailEl.value.trim();
+    const mensagem = msgEl.value.trim();
+
+    // Loading state (nicer UX)
+    const originalText = btn.textContent;
+    btn.textContent = 'Abrindo app de email...';
+    btn.disabled = true;
+
+    // Build clean mailto with proper encoding
+    const subject = encodeURIComponent(`Contato via site - ${nome}`);
+    const bodyLines = [
+      `Nome: ${nome}`,
+      `Email: ${email}`,
+      '',
+      'Mensagem:',
+      mensagem,
+      '',
+      '---',
+      'Enviado pelo formulário do site Gugû Dadá.'
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    const mailtoLink = `mailto:gugudada.mkt@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open mail client (works in most browsers; user must have default email app)
+    // Use setTimeout for visual loading feedback + to let browser process
+    setTimeout(function() {
+      try {
+        window.location.href = mailtoLink;
+      } catch (err) {
+        // Fallback: try creating a link and clicking (rarely needed)
+        const a = document.createElement('a');
+        a.href = mailtoLink;
+        a.target = '_self';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+
+      // Show success UI
+      const success = document.getElementById('form-success');
+      if (success) success.style.display = 'block';
+
+      // Reset form fields for next use
+      form.reset();
+
+      // Update button briefly then restore
+      btn.textContent = 'Email aberto! ✓';
+
+      setTimeout(function() {
+        if (btn) {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      }, 2200);
+    }, 420);
+  });
+})();
 
 </script>
 
