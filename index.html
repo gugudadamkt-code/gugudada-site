@@ -623,12 +623,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
   .guarantee-seal strong{ font-size:21px; line-height:1; font-weight:700; }
   .guarantee-seal span{ font-size:9px; letter-spacing:.4px; }
 
-  /* =================== FAQ + CTA FINAL =================== */
+  /* =================== FAQ =================== */
   .faq-final-grid{
-    display:grid;
-    grid-template-columns:1fr 360px;
-    gap:40px;
-    align-items:start;
+    max-width:760px;
+    margin:0 auto;
   }
   .faq-final-grid h2{ font-size:30px; margin-bottom:26px; }
   .faq-item{
@@ -658,102 +656,75 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     color:var(--text-light);
   }
 
-  .contact-side {
-    background: #f8f5f0;
-    border: 1px solid #e8e0d5;
-    border-radius: 18px;
-    padding: 24px 22px;
-    box-shadow: var(--shadow-card);
+  /* =================== CTA FINAL (Ainda em dúvida?) =================== */
+  .final-cta{
+    background:var(--green-deep);
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
   }
-  .side-title {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--green-deep);
-    margin-bottom: 16px;
+  .final-cta::before,
+  .final-cta::after{
+    content:'';
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    z-index:0;
   }
-  .contact-form .form-group {
-    margin-bottom: 14px;
+
+  .final-cta-card{
+    position:relative;
+    z-index:1;
+    max-width:640px;
+    margin:0 auto;
+    text-align:center;
   }
-  .contact-form label {
-    display: block;
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #5f5a53;
-    margin-bottom: 4px;
+  .final-cta-card .bowl-dots{ justify-content:center; margin-bottom:16px; }
+  .final-cta-card h2{
+    color:var(--cream);
+    font-size:34px;
+    margin-bottom:8px;
   }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1px solid #d8d0c4;
-    border-radius: 12px;
-    font-size: 14.5px;
-    font-family: inherit;
-    background: #fff;
-    color: var(--text);
-    transition: border-color .2s ease;
+  .final-cta-sub{
+    color:rgba(251,246,236,0.7);
+    font-size:15px;
+    margin-bottom:32px;
   }
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: var(--green);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(110, 154, 107, 0.1);
+  .final-cta-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 26px;
+    text-align:left;
+    max-width:480px;
+    margin:0 auto 34px;
   }
-  .contact-form textarea {
-    min-height: 90px;
-    resize: vertical;
+  .final-cta-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--cream);
+    font-size:15px;
+    font-weight:600;
   }
-  .btn-send {
-    width: 100%;
-    background: linear-gradient(135deg, var(--peach), var(--peach-dark));
-    color: var(--white);
-    border: none;
-    padding: 13px 18px;
-    border-radius: 999px;
-    font-size: 14.5px;
-    font-weight: 600;
-    font-family: 'Fredoka', sans-serif;
-    cursor: pointer;
-    margin-top: 4px;
-    transition: transform .18s ease, box-shadow .18s ease;
+  .final-cta-list li svg{
+    flex-shrink:0;
+    width:20px; height:20px;
+    background:rgba(110,154,107,0.35);
+    border-radius:50%;
+    padding:3px;
   }
-  .btn-send:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(222, 106, 66, 0.35);
+  .final-cta-arrow{
+    font-size:26px;
+    margin-bottom:16px;
+    animation:ctaBounce 1.8s infinite ease-in-out;
   }
-  .form-note {
-    font-size: 12px;
-    color: var(--text-light);
-    text-align: center;
-    margin-top: 10px;
+  @keyframes ctaBounce{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(6px); }
   }
-  .form-hint {
-    font-size: 11.5px;
-    color: var(--text-light);
-    text-align: center;
-    margin: 4px 0 8px;
-    font-style: italic;
-  }
-  .btn-send:disabled {
-    opacity: 0.72;
-    cursor: wait;
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  .form-success {
-    background: #e8f0e9;
-    border: 1px solid #6E9A6B;
-    color: #2F4A32;
-    padding: 13px 14px;
-    border-radius: 12px;
-    margin: 10px 0 4px;
-    font-size: 13.5px;
-    text-align: center;
-    line-height: 1.45;
-  }
-  .form-success p {
-    margin: 3px 0;
+  .final-cta .secure-note{
+    justify-content:center;
+    color:rgba(251,246,236,0.7);
   }
 
   /* =================== FOOTER =================== */
@@ -782,7 +753,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
     .features-grid { grid-template-columns: repeat(3, 1fr); }
     .showcase-grid { grid-template-columns: 1fr; gap: 22px; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .faq-final-grid { grid-template-columns: 1fr; gap: 28px; }
     .hero-visual .cover-frame { width: 88%; max-width: 360px; }
     .hero-visual .blob { width: 300px; height: 300px; }
     .features-strip img { max-width: min(620px, 92%); }
@@ -790,6 +760,9 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
 
   /* Mobile principal (landscape + portrait) */
   @media (max-width: 760px) {
+    .final-cta-list { grid-template-columns: 1fr; max-width: 320px; }
+    .final-cta-card h2 { font-size: 27px; }
+
     .site-header { background: #FFFBF5; }
     .logo-img { height: 52px; }
 
@@ -1022,7 +995,6 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
         <li><a href="#conteudo">Sobre o eBook</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#fale-conosco">Fale Conosco!</a></li>
         <li class="mobile-nav-cta"><a href="#" class="btn btn-primary">Quero meu eBook</a></li>
       </ul>
     </nav>
@@ -1233,10 +1205,10 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
           </div>
-          <p class="quote">As receitas são práticas e meu bebê amou todas! Os cardápios semanais me ajudaram demais no dia a dia.</p>
+          <p class="quote">As receitas são bem fáceis de fazer e meu bebê aceitou muito melhor do que eu imaginava.</p>
           <div class="testimonial-author">
             <!-- IMAGEM A SUBSTITUIR: foto real da cliente (círculo 120x120px). Use fotos de verdade de clientes ou avatares bonitos -->
-            <img src="https://placehold.co/120x120/DCE8D6/2F4A32?text=J" alt="Foto de Juliana M." loading="lazy">
+            <img src="img/r1.png" alt="Foto de Juliana M." loading="lazy">
             <strong>Juliana M.</strong>
           </div>
         </div>
@@ -1249,9 +1221,9 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
           </div>
-          <p class="quote">Conteúdo completo, organizado e feito com muito carinho. Superou minhas expectativas em todos os sentidos!</p>
+          <p class="quote">Comprei sem muita expectativa, mas acabou sendo um dos materiais que mais usei desde que meu bebê começou a comer.</p>
           <div class="testimonial-author">
-            <img src="https://placehold.co/120x120/FBDCC9/2F4A32?text=C" alt="Foto de Camila R." loading="lazy">
+            <img src="img/r2.png" alt="Foto de Camila R." loading="lazy">
             <strong>Camila R.</strong>
           </div>
         </div>
@@ -1264,9 +1236,9 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
           </div>
-          <p class="quote">Finalmente um guia que fala de tudo que precisamos nessa fase. Vale cada centavo, recomendo de olhos fechados!</p>
+          <p class="quote">Gostei muito da forma como o conteúdo foi organizado. É tudo bem explicado, fácil de entender e dá para perceber o cuidado na preparação. Com certeza valeu a compra.</p>
           <div class="testimonial-author">
-            <img src="https://placehold.co/120x120/F2C14E/2F4A32?text=F" alt="Foto de Fernanda L." loading="lazy">
+            <img src="img/r3.png" alt="Foto de Fernanda L." loading="lazy">
             <strong>Fernanda L.</strong>
           </div>
         </div>
@@ -1322,7 +1294,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
           </div>
         </a>
-        <!-- Artigo 3 -->
+        <!-- Artigo 3
         <a href="artigo-3.html" style="text-decoration:none; color:inherit;">
           <div class="testimonial-card" style="cursor:pointer;">
             <h3 style="font-size:18px; margin-bottom:8px;">Texturas por Idade: Guia Sem Engasgos</h3>
@@ -1330,7 +1302,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
           </div>
         </a>
-        <!-- Artigo 4 -->
+        <!-- Artigo 4
         <a href="artigo-4.html" style="text-decoration:none; color:inherit;">
           <div class="testimonial-card" style="cursor:pointer;">
             <h3 style="font-size:18px; margin-bottom:8px;">Recusa Alimentar: O Que Fazer?</h3>
@@ -1338,7 +1310,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
           </div>
         </a>
-        <!-- Artigo 5 -->
+        <!-- Artigo 5
         <a href="artigo-5.html" style="text-decoration:none; color:inherit;">
           <div class="testimonial-card" style="cursor:pointer;">
             <h3 style="font-size:18px; margin-bottom:8px;">Alergias Alimentares: Introdução Segura</h3>
@@ -1346,6 +1318,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
             <span style="color:var(--peach); font-weight:600; font-size:13px;">Ler artigo →</span>
           </div>
         </a>
+		-->
       </div>
     </div>
   </section>
@@ -1361,7 +1334,7 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
           <summary>Como vou receber o eBook?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E9A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
-          <p class="faq-answer">Assim que o pagamento é confirmado, você recebe automaticamente o link de acesso por e-mail em poucos minutos.</p>
+          <p class="faq-answer">Assim que o pagamento é confirmado, você recebe automaticamente o link de acesso ao conteúdo pela Kiwify, e você pode baixá-lo também seu disposotivo.</p>
         </details>
 
         <details class="faq-item">
@@ -1398,31 +1371,34 @@ src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
         </details>
       </div>
 
-      <div class="contact-side">
-        <h3 class="side-title">Dúvidas? Fale conosco!</h3>
-        <form id="fale-conosco" class="contact-form">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
-          </div>
-          <p class="form-hint">Será aberto seu app de email com os campos preenchidos.</p>
-          <button type="submit" class="btn-send">Enviar mensagem</button>
-        </form>
-        <div id="form-success" class="form-success" style="display:none;">
-          <p><strong>✅ Pronto!</strong> Seu app de email foi aberto com a mensagem pré-preenchida.</p>
-          <p style="margin:6px 0 0; font-size:12px;">Se não abriu, copie os dados e envie manualmente para <a href="mailto:gugudada.mkt@gmail.com" style="color:inherit; text-decoration:underline;">gugudada.mkt@gmail.com</a>.</p>
-        </div>
-        <p class="form-note">Respondemos em até 24h úteis.</p>
-      </div>
+    </div>
+  </section>
 
+  <!-- ============ CTA FINAL: Ainda em dúvida? ============ -->
+  <section class="final-cta" id="cta-final">
+    <div class="container">
+      <div class="final-cta-card">
+        <!--<span class="bowl-dots"><span></span><span></span><span></span></span>-->
+        <h2>Ainda em dúvida?</h2>
+        <p class="final-cta-sub">Tudo que você precisa para uma introdução alimentar tranquila está aqui dentro.</p>
+
+        <ul class="final-cta-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100 receitas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cardápios semanais</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Introdução alimentar do zero</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Receitas separadas por idade</li>
+		  <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Orientações para segurança alimentar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Acesso imediato</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Compra 100% segura</li>
+		  <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garantia de 7 dias</li>
+        </ul>
+
+        <p class="final-cta-arrow" aria-hidden="true">👇</p>
+
+        <!-- LINK A SUBSTITUIR: link de checkout -->
+        <a href="#" class="btn btn-primary" id="final-cta-btn">Quero começar hoje</a>
+        <p class="secure-note">🔒 Compra 100% segura • Garantia de 7 dias</p>
+      </div>
     </div>
   </section>
 
@@ -1553,12 +1529,12 @@ function closeCapaModal() {
   }
 })();
 
-// Loop animation on CTA in sobre section (pulse)
+// Loop animation on CTA in sobre section + final CTA section (pulse)
 (function() {
-  const sobreCta = document.querySelector('#sobre .btn-primary');
-  if (sobreCta) {
-    sobreCta.style.animation = 'pulseCta 2s infinite ease-in-out';
-  }
+  const pulseTargets = document.querySelectorAll('#sobre .btn-primary, #final-cta-btn');
+  pulseTargets.forEach(function(btn) {
+    btn.style.animation = 'pulseCta 2s infinite ease-in-out';
+  });
 })();
 
 // Add keyframes for pulse if not present
@@ -1589,82 +1565,6 @@ function showPolicyModal(type) {
 function closePolicyModal() {
   document.getElementById('policy-modal').style.display = 'none';
 }
-
-// Robust contact form handler for static site (mailto with graceful UX + loading)
-// Replaces unreliable native mailto form submission.
-(function() {
-  const form = document.getElementById('fale-conosco');
-  if (!form) return;
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nomeEl = document.getElementById('nome');
-    const emailEl = document.getElementById('email');
-    const msgEl = document.getElementById('mensagem');
-    const btn = form.querySelector('.btn-send');
-    const success = document.getElementById('form-success');
-    if (success) success.style.display = 'none';
-    if (!nomeEl || !emailEl || !msgEl || !btn) return;
-
-    const nome = nomeEl.value.trim();
-    const email = emailEl.value.trim();
-    const mensagem = msgEl.value.trim();
-
-    // Loading state (nicer UX)
-    const originalText = btn.textContent;
-    btn.textContent = 'Abrindo app de email...';
-    btn.disabled = true;
-
-    // Build clean mailto with proper encoding
-    const subject = encodeURIComponent(`Contato via site - ${nome}`);
-    const bodyLines = [
-      `Nome: ${nome}`,
-      `Email: ${email}`,
-      '',
-      'Mensagem:',
-      mensagem,
-      '',
-      '---',
-      'Enviado pelo formulário do site Gugû Dadá.'
-    ];
-    const body = encodeURIComponent(bodyLines.join('\n'));
-    const mailtoLink = `mailto:gugudada.mkt@gmail.com?subject=${subject}&body=${body}`;
-
-    // Open mail client (works in most browsers; user must have default email app)
-    // Use setTimeout for visual loading feedback + to let browser process
-    setTimeout(function() {
-      try {
-        window.location.href = mailtoLink;
-      } catch (err) {
-        // Fallback: try creating a link and clicking (rarely needed)
-        const a = document.createElement('a');
-        a.href = mailtoLink;
-        a.target = '_self';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }
-
-      // Show success UI
-      const success = document.getElementById('form-success');
-      if (success) success.style.display = 'block';
-
-      // Reset form fields for next use
-      form.reset();
-
-      // Update button briefly then restore
-      btn.textContent = 'Email aberto! ✓';
-
-      setTimeout(function() {
-        if (btn) {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }
-      }, 2200);
-    }, 420);
-  });
-})();
 
 </script>
 
